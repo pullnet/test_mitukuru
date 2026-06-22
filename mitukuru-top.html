@@ -38,6 +38,8 @@
   .h2{font-size:27px;font-weight:700;text-align:center;line-height:1.55;color:var(--coral-darker)}
   .lead{text-align:center;color:var(--muted);font-size:15px;margin-top:12px}
   .pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;padding:4px 11px;border-radius:99px}
+  .ico{display:inline-block;vertical-align:middle;flex-shrink:0}
+  .btn .ico{width:18px;height:18px}
 
   /* header */
   header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
@@ -46,7 +48,11 @@
   .nav-links{display:flex;align-items:center;gap:26px;font-size:14px;color:var(--muted)}
   .nav-links a:hover{color:var(--coral-dark)}
   .nav .btn{padding:10px 18px;font-size:14px}
-  .menu-btn{display:none;background:none;border:none;font-size:26px;color:var(--ink);cursor:pointer;line-height:1}
+  .menu-btn{display:none;background:none;border:none;color:var(--ink);cursor:pointer;line-height:1;padding:4px}
+  .menu-btn .ico{width:26px;height:26px}
+  .menu-btn .ico-close{display:none}
+  header.nav-open .menu-btn .ico-open{display:none}
+  header.nav-open .menu-btn .ico-close{display:inline-block}
 
   /* hero */
   .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--coral-50) 0%,#fff 100%);padding:90px 0;border-radius:0 0 28px 28px}
@@ -132,6 +138,16 @@
   @media(max-width:640px){
     .nav-links{display:none}
     .menu-btn{display:block}
+    header.nav-open .nav-links{
+      display:flex;flex-direction:column;align-items:stretch;gap:0;
+      position:absolute;top:64px;left:0;right:0;
+      background:rgba(255,255,255,.98);backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--line);
+      padding:8px 24px 18px;
+      box-shadow:0 10px 24px rgba(0,0,0,.07)
+    }
+    header.nav-open .nav-links a{padding:14px 4px;border-bottom:1px solid var(--line);font-size:15px}
+    header.nav-open .nav-links a.btn{margin-top:14px;border-bottom:none;justify-content:center}
     .hero{padding:56px 0}
     .hero h1{font-size:23px;line-height:1.6}
     .hero h1 .l{white-space:normal}
@@ -150,14 +166,17 @@
 <header>
   <div class="wrap nav">
     <a href="#" class="logo"><img src="https://mitukuru.com/img/logo_miturukuru.svg" alt="みつくる"></a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="nav-links">
       <a href="#features">できること</a>
       <a href="#flow">使い方</a>
       <a href="#voices">事例</a>
       <a href="#faq">よくある質問</a>
       <a class="btn btn-primary" href="#cta">無料で試す</a>
     </nav>
-    <button class="menu-btn" aria-label="メニュー">&#9776;</button>
+    <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links">
+      <svg class="ico ico-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+      <svg class="ico ico-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="M6 6l12 12"/></svg>
+    </button>
   </div>
 </header>
 
@@ -169,7 +188,7 @@
       <h1><span class="l">ヒアリングシートに答えるだけ。</span><span class="l">お見積もりと構成提案が、<span style="color:var(--coral)">届く！</span></span></h1>
       <p>Web制作・EC・マーケで「やりたいこと」を書くだけ。たたき台が手に入るから、迷わず最初の一歩を踏み出せます。</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#cta">&#9998;&nbsp;無料でシートに答えてみる</a>
+        <a class="btn btn-primary" href="#cta"><svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"/><path d="M13.5 6.5l4 4"/></svg>無料でシートに答えてみる</a>
         <a class="btn btn-ghost" href="#cta">まずはオンラインで相談する</a>
       </div>
       <div class="trust">
@@ -193,7 +212,7 @@
     <div class="feat-grid">
 
       <div class="feat">
-        <div class="feat-ic" style="background:var(--amber-50);color:var(--amber-600)">&#128101;</div>
+        <div class="feat-ic" style="background:var(--amber-50);color:var(--amber-600)"><svg class="ico" width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"/><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0 -3 -3.85"/></svg></div>
         <div>
           <span class="tag" style="background:var(--amber-50);color:var(--amber-800)">外部パートナーとの協業</span>
           <h3>スキルを持つパートナーと、いっしょに進められます</h3>
@@ -210,10 +229,10 @@
   <div class="wrap">
     <h2 class="h2">こんなお悩み、ありませんか？</h2>
     <div class="worry-grid">
-      <div class="worry"><span class="ic">&#9888;</span><span>やりたい施策は山ほどあるのに、今日も何も進まなかった</span></div>
-      <div class="worry"><span class="ic">&#9888;</span><span>WEBマーケティング、何から始めるのが正解か分からない</span></div>
-      <div class="worry"><span class="ic">&#9888;</span><span>外注したいけれど、うまく伝えられる自信がない</span></div>
-      <div class="worry"><span class="ic">&#9888;</span><span>SNS・LP・動画…点で終わって、成果につながらない</span></div>
+      <div class="worry"><span class="ic"><svg class="ico" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4"/><path d="M10.24 3.957l-8.422 14.06a1.989 1.989 0 0 0 1.7 2.983h16.845a1.989 1.989 0 0 0 1.7 -2.983l-8.423 -14.06a1.989 1.989 0 0 0 -3.4 0z"/><path d="M12 17h.01"/></svg></span><span>やりたい施策は山ほどあるのに、今日も何も進まなかった</span></div>
+      <div class="worry"><span class="ic"><svg class="ico" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4"/><path d="M10.24 3.957l-8.422 14.06a1.989 1.989 0 0 0 1.7 2.983h16.845a1.989 1.989 0 0 0 1.7 -2.983l-8.423 -14.06a1.989 1.989 0 0 0 -3.4 0z"/><path d="M12 17h.01"/></svg></span><span>WEBマーケティング、何から始めるのが正解か分からない</span></div>
+      <div class="worry"><span class="ic"><svg class="ico" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4"/><path d="M10.24 3.957l-8.422 14.06a1.989 1.989 0 0 0 1.7 2.983h16.845a1.989 1.989 0 0 0 1.7 -2.983l-8.423 -14.06a1.989 1.989 0 0 0 -3.4 0z"/><path d="M12 17h.01"/></svg></span><span>外注したいけれど、うまく伝えられる自信がない</span></div>
+      <div class="worry"><span class="ic"><svg class="ico" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4"/><path d="M10.24 3.957l-8.422 14.06a1.989 1.989 0 0 0 1.7 2.983h16.845a1.989 1.989 0 0 0 1.7 -2.983l-8.423 -14.06a1.989 1.989 0 0 0 -3.4 0z"/><path d="M12 17h.01"/></svg></span><span>SNS・LP・動画…点で終わって、成果につながらない</span></div>
     </div>
   </div>
 </section>
@@ -237,10 +256,10 @@
   <div class="wrap">
     <h2 class="h2">みつくるが、大切にしていること</h2>
     <div class="ben-grid">
-      <div class="ben"><span class="ic">&#10003;</span><div><h4>小さく始められます</h4><p>1ページ・1投稿から。いきなり大きく構えなくて大丈夫です。</p></div></div>
-      <div class="ben"><span class="ic">&#10003;</span><div><h4>お手元の資料を活かせます</h4><p>すでにある資料を、そのままご提案づくりに活用できます。</p></div></div>
-      <div class="ben"><span class="ic">&#10003;</span><div><h4>AIと人の、いいとこ取り</h4><p>たたき台はAIが、最終的な仕上げは人が担当します。</p></div></div>
-      <div class="ben"><span class="ic">&#10003;</span><div><h4>管理の手間がいりません</h4><p>ディレクションや進行管理はおまかせ。本業に集中いただけます。</p></div></div>
+      <div class="ben"><span class="ic"><svg class="ico" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5l10 -10"/></svg></span><div><h4>小さく始められます</h4><p>1ページ・1投稿から。いきなり大きく構えなくて大丈夫です。</p></div></div>
+      <div class="ben"><span class="ic"><svg class="ico" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5l10 -10"/></svg></span><div><h4>お手元の資料を活かせます</h4><p>すでにある資料を、そのままご提案づくりに活用できます。</p></div></div>
+      <div class="ben"><span class="ic"><svg class="ico" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5l10 -10"/></svg></span><div><h4>AIと人の、いいとこ取り</h4><p>たたき台はAIが、最終的な仕上げは人が担当します。</p></div></div>
+      <div class="ben"><span class="ic"><svg class="ico" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5l10 -10"/></svg></span><div><h4>管理の手間がいりません</h4><p>ディレクションや進行管理はおまかせ。本業に集中いただけます。</p></div></div>
     </div>
   </div>
 </section>
@@ -252,15 +271,15 @@
     <div class="voice-grid">
       <div class="voice">
         <p class="q">「相談するだけで、前に進み始めた感覚がありました」</p>
-        <div class="who"><span class="av">&#128100;</span><div><b>中小企業 代表</b><small>サービス業</small></div></div>
+        <div class="who"><span class="av"><svg class="ico" width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/></svg></span><div><b>中小企業 代表</b><small>サービス業</small></div></div>
       </div>
       <div class="voice">
         <p class="q">「“作って終わり”にならないのが助かっています」</p>
-        <div class="who"><span class="av">&#128100;</span><div><b>BtoB企業 マーケ担当</b><small>製造業</small></div></div>
+        <div class="who"><span class="av"><svg class="ico" width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/></svg></span><div><b>BtoB企業 マーケ担当</b><small>製造業</small></div></div>
       </div>
       <div class="voice">
         <p class="q">「小さく始められるので安心でした」</p>
-        <div class="who"><span class="av">&#128100;</span><div><b>少人数事業 経営者</b><small>EC・小売</small></div></div>
+        <div class="who"><span class="av"><svg class="ico" width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/></svg></span><div><b>少人数事業 経営者</b><small>EC・小売</small></div></div>
       </div>
     </div>
   </div>
@@ -274,7 +293,7 @@
     <div class="feat-grid">
 
       <div class="feat">
-        <div class="feat-ic" style="background:var(--pink-50);color:var(--pink-600)">&#9654;</div>
+        <div class="feat-ic" style="background:var(--pink-50);color:var(--pink-600)"><svg class="ico" width="28" height="28" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg></div>
         <div>
           <span class="tag" style="background:var(--pink-50);color:var(--pink-800)">活用動画で学べる</span>
           <h3>動画を見ながら、社内のスキルを育てられます</h3>
@@ -292,23 +311,23 @@
     <h2 class="h2">よくいただくご質問</h2>
     <div class="faq">
       <details class="qa" open>
-        <summary><span><span class="qmark">Q</span>相談に費用はかかりますか？</span><span class="chev">&#9662;</span></summary>
+        <summary><span><span class="qmark">Q</span>相談に費用はかかりますか？</span><span class="chev"><svg class="ico" width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span></summary>
         <div class="ans">相談は無料です。シートへのご回答から、お見積もりと構成のご提案まで、費用はかかりません。</div>
       </details>
       <details class="qa">
-        <summary><span><span class="qmark">Q</span>相談だけでも利用できますか？</span><span class="chev">&#9662;</span></summary>
+        <summary><span><span class="qmark">Q</span>相談だけでも利用できますか？</span><span class="chev"><svg class="ico" width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span></summary>
         <div class="ans">はい、無料相談のみでも問題ありません。ご依頼するかどうかは、ご提案をご覧になってから決めていただけます。</div>
       </details>
       <details class="qa">
-        <summary><span><span class="qmark">Q</span>小さな依頼でも対応してもらえますか？</span><span class="chev">&#9662;</span></summary>
+        <summary><span><span class="qmark">Q</span>小さな依頼でも対応してもらえますか？</span><span class="chev"><svg class="ico" width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span></summary>
         <div class="ans">1ページ、1投稿から対応しています。まずは小さく試して、反応を見ながら進めていただけます。</div>
       </details>
       <details class="qa">
-        <summary><span><span class="qmark">Q</span>AIが作ったご提案の品質が心配です。</span><span class="chev">&#9662;</span></summary>
+        <summary><span><span class="qmark">Q</span>AIが作ったご提案の品質が心配です。</span><span class="chev"><svg class="ico" width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span></summary>
         <div class="ans">AIはあくまで「たたき台」をすばやくご用意するためのものです。外部パートナーへご依頼いただく場合は、最終的な仕上げを人が行います。</div>
       </details>
       <details class="qa">
-        <summary><span><span class="qmark">Q</span>費用が膨らまないか不安です。</span><span class="chev">&#9662;</span></summary>
+        <summary><span><span class="qmark">Q</span>費用が膨らまないか不安です。</span><span class="chev"><svg class="ico" width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span></summary>
         <div class="ans">内容を整理してから、必要な分だけご提案します。小ロットでのご依頼が基本ですので、ご予算に合わせて進められます。</div>
       </details>
     </div>
@@ -321,7 +340,7 @@
     <h2>まずは、お気軽にお試しください</h2>
     <p>シートに答えるだけ。お見積もりと構成のご提案が届きます。</p>
     <div class="hero-cta" style="margin-bottom:0">
-      <a class="btn btn-primary" href="#">&#10142;&nbsp;無料でシートに答えてみる</a>
+      <a class="btn btn-primary" href="#"><svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></svg>無料でシートに答えてみる</a>
       <a class="btn btn-ghost" href="#">まずはオンラインで相談する</a>
     </div>
   </div>
@@ -356,6 +375,40 @@
   </div>
   <div class="wrap"><p class="copy">&copy; 2026 みつくる. All rights reserved.</p></div>
 </footer>
+
+<script>
+  (function(){
+    var header = document.querySelector('header');
+    var btn = document.querySelector('.menu-btn');
+    var nav = document.getElementById('nav-links');
+    if(!header || !btn || !nav) return;
+
+    function setOpen(open){
+      header.classList.toggle('nav-open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    }
+
+    btn.addEventListener('click', function(){
+      setOpen(!header.classList.contains('nav-open'));
+    });
+
+    // メニュー内リンクをタップしたら閉じる
+    nav.addEventListener('click', function(e){
+      if(e.target.closest('a')) setOpen(false);
+    });
+
+    // Escキーで閉じる
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') setOpen(false);
+    });
+
+    // PC幅に戻ったら状態をリセット
+    window.matchMedia('(min-width:641px)').addEventListener('change', function(e){
+      if(e.matches) setOpen(false);
+    });
+  })();
+</script>
 
 </body>
 </html>
