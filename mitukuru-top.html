@@ -7,19 +7,20 @@
 <meta name="description" content="ヒアリングシートに答えるだけで、お見積もりと構成のご提案が届きます。スキルを持つ外部パートナーとの協業や、活用動画での社内スキルアップも。相談は無料です。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --coral:#D85A30; --coral-dark:#993C1D; --coral-darker:#4A1B0C;
-    --coral-50:#FAECE7; --coral-100:#F5C4B3; --coral-200:#F0997B;
-    --amber-50:#FAEEDA; --amber-600:#BA7517; --amber-800:#854F0B;
-    --pink-50:#FBEAF0; --pink-600:#993556; --pink-800:#72243E;
-    --teal-50:#E1F5EE; --teal-700:#0F6E56;
-    --ink:#2C2C2A; --muted:#5F5E5A; --hint:#888780;
+    /* 基調色：薄いグリーン／ボタン・アクセント：濃いグリーン（旧--coral系を緑に置換） */
+    --coral:#1F8A4D; --coral-dark:#14633A; --coral-darker:#0C3F26;
+    --coral-50:#E8F5ED; --coral-100:#C4E7D1; --coral-200:#8FCBA6;
+    --amber-50:#E5F2E8; --amber-600:#3E8A63; --amber-800:#265E41;
+    --pink-50:#E6F2EC; --pink-600:#2E7B59; --pink-800:#1E5A41;
+    --teal-50:#E1F2EC; --teal-700:#0F6E56;
+    --ink:#243027; --muted:#566159; --hint:#82897F;
     --line:rgba(0,0,0,.10); --line-2:rgba(0,0,0,.16);
-    --bg:#FFFFFF; --bg-soft:#FBF8F4;
+    --bg:#FFFFFF; --bg-soft:#EFF6F0;
     --radius:12px; --radius-sm:8px; --maxw:1080px;
-    --font-display:"Zen Maru Gothic","Noto Sans JP",system-ui,sans-serif;
+    --font-display:"Noto Sans JP",system-ui,-apple-system,sans-serif;
     --font-body:"Noto Sans JP",system-ui,-apple-system,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -28,7 +29,7 @@
   a{color:inherit;text-decoration:none}
   a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--coral);outline-offset:2px;border-radius:4px}
   /* signature: ブランドの核「届く」を手書き風マーカーで強調 */
-  .mark{background:linear-gradient(transparent 56%, rgba(240,153,123,.55) 56%);padding:0 .08em;font-family:var(--font-display);font-weight:900;color:var(--coral-darker);white-space:nowrap}
+  .mark{background:linear-gradient(transparent 56%, rgba(143,203,166,.6) 56%);padding:0 .08em;font-family:var(--font-body);font-weight:700;color:var(--coral-darker);white-space:nowrap}
   img{max-width:100%;display:block}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
   .btn{display:inline-flex;align-items:center;gap:8px;font-weight:500;border-radius:var(--radius-sm);padding:14px 28px;font-size:15px;cursor:pointer;transition:transform .08s ease, opacity .15s ease;border:none;white-space:nowrap}
@@ -41,7 +42,7 @@
   .sec-soft{background:var(--bg-soft)}
   .eyebrow{display:inline-block;background:var(--coral-100);color:var(--coral-dark);font-size:12px;font-weight:500;padding:6px 16px;border-radius:99px;margin-bottom:18px;letter-spacing:.02em}
   .h2{font-family:var(--font-display);font-size:28px;font-weight:700;text-align:center;line-height:1.5;color:var(--coral-darker);letter-spacing:.01em}
-  .h2::after{content:"";display:block;width:64px;height:9px;margin:16px auto 0;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='9'%20viewBox='0%200%2064%209'%3E%3Cpath%20d='M2%206%20Q10%201%2018%206%20T34%206%20T50%206%20T62%205'%20fill='none'%20stroke='%23D85A30'%20stroke-width='2.6'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E")}
+  .h2::after{content:"";display:block;width:64px;height:9px;margin:16px auto 0;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='9'%20viewBox='0%200%2064%209'%3E%3Cpath%20d='M2%206%20Q10%201%2018%206%20T34%206%20T50%206%20T62%205'%20fill='none'%20stroke='%231F8A4D'%20stroke-width='2.6'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E")}
   .lead{text-align:center;color:var(--muted);font-size:15px;margin-top:12px}
   .pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;padding:4px 11px;border-radius:99px}
   .ico{display:inline-block;vertical-align:middle;flex-shrink:0}
@@ -64,7 +65,7 @@
   .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--coral-50) 0%,#fff 100%);padding:90px 0;border-radius:0 0 28px 28px}
   .hero .wrap{position:relative;z-index:2}
   .hero-text{text-align:left;max-width:600px}
-  .hero h1{font-family:var(--font-display);font-size:34px;font-weight:900;line-height:1.5;color:var(--coral-darker);letter-spacing:.015em}
+  .hero h1{font-family:var(--font-display);font-size:34px;font-weight:700;line-height:1.5;color:var(--coral-darker);letter-spacing:.015em}
   .hero h1 .l{display:block;white-space:nowrap}
   .hero p{font-size:16px;color:var(--coral-dark);margin:20px 0 30px;line-height:1.9;max-width:500px}
   .hero-cta{display:flex;gap:14px;flex-wrap:nowrap;margin-bottom:24px}
@@ -75,7 +76,7 @@
 
   /* journey：シート → ご提案 → その後 */
   .journey{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:10px;margin-top:44px}
-  .jcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 20px;box-shadow:0 8px 26px rgba(216,90,48,.06)}
+  .jcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 20px;box-shadow:0 8px 26px rgba(31,138,77,.06)}
   .jcap{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:var(--coral-dark);margin-bottom:16px}
   .jcap .num{width:22px;height:22px;border-radius:50%;background:var(--coral);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
   .jarrow{display:flex;align-items:center;justify-content:center;color:var(--coral-200)}
@@ -197,8 +198,8 @@
 
   /* micro-interactions（控えめに） */
   .feat,.case,.pcard,.voice,.worry,.ben,.step,.qa{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
-  .feat:hover,.case:hover,.pcard:hover,.voice:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(216,90,48,.12);border-color:var(--coral-200)}
-  .worry:hover,.ben:hover,.step:hover{border-color:var(--coral-200);box-shadow:0 8px 22px rgba(216,90,48,.09)}
+  .feat:hover,.case:hover,.pcard:hover,.voice:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(31,138,77,.12);border-color:var(--coral-200)}
+  .worry:hover,.ben:hover,.step:hover{border-color:var(--coral-200);box-shadow:0 8px 22px rgba(31,138,77,.09)}
   /* scroll reveal（JSで .reveal を付与、prefers-reduced-motion尊重） */
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
   .reveal.in{opacity:1;transform:none}
@@ -352,35 +353,35 @@
     <!-- ▼ 各カードの .photo はパートナー写真の入るスペースです。背景グラデーションを実写真に差し替えてください -->
     <div class="partners">
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#F0997B,#D85A30)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#4FB477,#1F8A4D)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
         <div class="pbody"><div class="prole">Webデザイナー</div><div class="parea">UI ／ LP ／ バナー</div><div class="pskills"><span>LP制作</span><span>UIデザイン</span><span>バナー</span></div></div>
       </div>
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#E8B25E,#BA7517)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#8FB573,#5C8A3C)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
         <div class="pbody"><div class="prole">ECコンサルタント</div><div class="parea">楽天 ／ Amazon ／ Shopify</div><div class="pskills"><span>モール運用</span><span>CVR改善</span><span>商品ページ</span></div></div>
       </div>
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#5FBFA6,#0F6E56)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#4FB4A0,#0F6E56)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
         <div class="pbody"><div class="prole">ライター</div><div class="parea">SEO記事 ／ セールス文</div><div class="pskills"><span>SEO記事</span><span>LP原稿</span><span>SNS文</span></div></div>
       </div>
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#D98AA3,#993556)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#79B37E,#3F7A4E)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
         <div class="pbody"><div class="prole">フォトグラファー</div><div class="parea">商品 ／ 人物 ／ 動画</div><div class="pskills"><span>商品撮影</span><span>動画撮影</span><span>レタッチ</span></div></div>
       </div>
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#6B7C99,#2E384C)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#6E9C86,#3A5E4C)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
         <div class="pbody"><div class="prole">広告運用</div><div class="parea">Google ／ Meta ／ LINE</div><div class="pskills"><span>リスティング</span><span>SNS広告</span><span>運用改善</span></div></div>
       </div>
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#7FB0D8,#3A6EA5)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#5BA8B8,#2E6E7E)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
         <div class="pbody"><div class="prole">エンジニア</div><div class="parea">実装 ／ 構築</div><div class="pskills"><span>WordPress</span><span>Shopify</span><span>API連携</span></div></div>
       </div>
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#EBA07C,#C2562F)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#57C08A,#2A8F5A)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
         <div class="pbody"><div class="prole">SNS運用</div><div class="parea">Instagram ／ TikTok</div><div class="pskills"><span>投稿企画</span><span>リール制作</span><span>運用代行</span></div></div>
       </div>
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#A98AC8,#6A4C93)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#3E8A63,#14633A)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
         <div class="pbody"><div class="prole">動画クリエイター</div><div class="parea">編集 ／ モーション</div><div class="pskills"><span>動画編集</span><span>モーション</span><span>テロップ</span></div></div>
       </div>
     </div>
@@ -412,32 +413,32 @@
     <div class="case-grid">
 
       <div class="case">
-        <div class="thumb" style="background:linear-gradient(140deg,#F0997B,#D85A30)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M17 17h-11v-14h-2"/><path d="M6 5l14 1l-1 7h-13"/></svg></div>
+        <div class="thumb" style="background:linear-gradient(140deg,#4FB477,#1F8A4D)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M17 17h-11v-14h-2"/><path d="M6 5l14 1l-1 7h-13"/></svg></div>
         <div class="cbody"><span class="ccat">ECサイト構築</span><h4>アパレルD2Cの自社EC立ち上げ</h4><p>ブランドの世界観に合わせたストアを構築し、販売をスタートしました。</p></div>
       </div>
 
       <div class="case">
-        <div class="thumb" style="background:linear-gradient(140deg,#E8B25E,#BA7517)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"/><path d="M4 9h16"/><path d="M9 9v11"/></svg></div>
+        <div class="thumb" style="background:linear-gradient(140deg,#8FB573,#5C8A3C)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"/><path d="M4 9h16"/><path d="M9 9v11"/></svg></div>
         <div class="cbody"><span class="ccat">ランディングページ</span><h4>健康食品の定期通販LP</h4><p>訴求を整理し、お申し込みまでの導線をわかりやすく改善しました。</p></div>
       </div>
 
       <div class="case">
-        <div class="thumb" style="background:linear-gradient(140deg,#6B7C99,#2E384C)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16"/><path d="M9 8h1"/><path d="M9 12h1"/><path d="M14 8h1"/><path d="M14 12h1"/></svg></div>
+        <div class="thumb" style="background:linear-gradient(140deg,#6E9C86,#3A5E4C)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16"/><path d="M9 8h1"/><path d="M9 12h1"/><path d="M14 8h1"/><path d="M14 12h1"/></svg></div>
         <div class="cbody"><span class="ccat">コーポレートサイト</span><h4>製造業の企業サイトリニューアル</h4><p>情報を整理し、お問い合わせにつながりやすい構成へ刷新しました。</p></div>
       </div>
 
       <div class="case">
-        <div class="thumb" style="background:linear-gradient(140deg,#5FBFA6,#0F6E56)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z"/><path d="M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z"/><path d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z"/></svg></div>
+        <div class="thumb" style="background:linear-gradient(140deg,#4FB4A0,#0F6E56)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z"/><path d="M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z"/><path d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z"/></svg></div>
         <div class="cbody"><span class="ccat">商品ページ改善</span><h4>雑貨ECの売れる商品ページ</h4><p>写真と文章を見直し、商品の魅力が伝わるページに整えました。</p></div>
       </div>
 
       <div class="case">
-        <div class="thumb" style="background:linear-gradient(140deg,#D98AA3,#993556)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M16.5 7.5l0 .01"/></svg></div>
+        <div class="thumb" style="background:linear-gradient(140deg,#79B37E,#3F7A4E)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M16.5 7.5l0 .01"/></svg></div>
         <div class="cbody"><span class="ccat">SNS運用</span><h4>飲食店のInstagram運用</h4><p>投稿企画から制作まで、無理なく続けられる体制をつくりました。</p></div>
       </div>
 
       <div class="case">
-        <div class="thumb" style="background:linear-gradient(140deg,#A98AC8,#6A4C93)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z"/><path d="M3 6m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z"/></svg></div>
+        <div class="thumb" style="background:linear-gradient(140deg,#3E8A63,#14633A)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z"/><path d="M3 6m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z"/></svg></div>
         <div class="cbody"><span class="ccat">動画制作</span><h4>サービス紹介動画の制作</h4><p>サービスの魅力を、短い動画でわかりやすくお伝えしました。</p></div>
       </div>
 
