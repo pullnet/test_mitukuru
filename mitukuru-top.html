@@ -115,7 +115,7 @@
   .pcard{flex:0 0 clamp(280px,86vw,388px);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;box-shadow:0 6px 20px rgba(31,138,77,.05)}
   .pcard .photo{flex:0 0 150px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
   .pcard .photo svg{width:92px;height:92px;color:rgba(255,255,255,.92);margin-bottom:-2px}
-  .pcard .photo img{width:100%;height:100%;object-fit:cover}
+  .pcard .photo img{width:100%;height:100%;object-fit:contain;object-position:center bottom;padding:14px 8px 0}
   .pcard .pbody{flex:1;min-width:0;padding:18px;display:flex;flex-direction:column;justify-content:center}
   .pcard .prole{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px}
   .pcard .parea{font-size:11.5px;color:var(--hint);margin-bottom:14px;line-height:1.5}
@@ -372,35 +372,35 @@
     <!-- ▼ 各カードの .photo はパートナー写真の入るスペースです。背景グラデーションを実写真に差し替えてください -->
     <div class="partners">
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#4FB477,#1F8A4D)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#4FB477,#1F8A4D)"><img src="img/partner-1.png" alt="デザイナーのイラスト"></div>
         <div class="pbody"><div class="prole">デザイナー</div><div class="parea">Web・グラフィック制作</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-design"/></svg>デザイン</span><span class="skill"><svg class="ico"><use href="#sk-layout"/></svg>LP・UI</span><span class="skill"><svg class="ico"><use href="#sk-image"/></svg>バナー</span></div></div>
       </div>
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#8FB573,#5C8A3C)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#8FB573,#5C8A3C)"><img src="img/partner-2.png" alt="ディレクターのイラスト"></div>
         <div class="pbody"><div class="prole">ディレクター</div><div class="parea">進行・品質の管理</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-direct"/></svg>進行管理</span><span class="skill"><svg class="ico"><use href="#sk-article"/></svg>企画設計</span><span class="skill"><svg class="ico"><use href="#sk-chart"/></svg>品質チェック</span></div></div>
       </div>
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#4FB4A0,#0F6E56)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#4FB4A0,#0F6E56)"><img src="img/partner-3.png" alt="ECモール戦略のイラスト"></div>
         <div class="pbody"><div class="prole">ECモール戦略</div><div class="parea">楽天 ／ Amazon ／ Shopify</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-cart"/></svg>モール運用</span><span class="skill"><svg class="ico"><use href="#sk-chart"/></svg>売上分析</span><span class="skill"><svg class="ico"><use href="#sk-layout"/></svg>商品ページ</span></div></div>
       </div>
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#79B37E,#3F7A4E)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#79B37E,#3F7A4E)"><img src="img/partner-4.png" alt="広告運用のイラスト"></div>
         <div class="pbody"><div class="prole">広告運用</div><div class="parea">Google ／ Meta ／ LINE</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-ads"/></svg>広告運用</span><span class="skill"><svg class="ico"><use href="#sk-chart"/></svg>運用分析</span><span class="skill"><svg class="ico"><use href="#sk-image"/></svg>広告制作</span></div></div>
       </div>
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#6E9C86,#3A5E4C)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#6E9C86,#3A5E4C)"><img src="img/partner-5.png" alt="マーケターのイラスト"></div>
         <div class="pbody"><div class="prole">マーケター</div><div class="parea">戦略 ／ 分析 ／ 集客</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-chart"/></svg>データ分析</span><span class="skill"><svg class="ico"><use href="#sk-article"/></svg>企画立案</span><span class="skill"><svg class="ico"><use href="#sk-ads"/></svg>集客施策</span></div></div>
       </div>
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#5BA8B8,#2E6E7E)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#5BA8B8,#2E6E7E)"><img src="img/partner-6.png" alt="インフルエンサーのイラスト"></div>
         <div class="pbody"><div class="prole">インフルエンサー</div><div class="parea">SNS ／ PR</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-instagram"/></svg>SNS発信</span><span class="skill"><svg class="ico"><use href="#sk-video"/></svg>リール制作</span><span class="skill"><svg class="ico"><use href="#sk-ads"/></svg>PR・拡散</span></div></div>
       </div>
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#57C08A,#2A8F5A)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#57C08A,#2A8F5A)"><img src="img/partner-7.png" alt="映像制作のイラスト"></div>
         <div class="pbody"><div class="prole">映像制作</div><div class="parea">撮影 ／ 編集</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-video"/></svg>動画編集</span><span class="skill"><svg class="ico"><use href="#sk-camera"/></svg>撮影</span><span class="skill"><svg class="ico"><use href="#sk-image"/></svg>モーション</span></div></div>
       </div>
       <div class="pcard">
-        <div class="photo" style="background:linear-gradient(140deg,#3E8A63,#14633A)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
+        <div class="photo" style="background:linear-gradient(140deg,#3E8A63,#14633A)"><img src="img/partner-8.png" alt="AIのイラスト"></div>
         <div class="pbody"><div class="prole">AI</div><div class="parea">AI活用 ／ 自動化</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-ai"/></svg>AI活用</span><span class="skill"><svg class="ico"><use href="#sk-code"/></svg>自動化</span><span class="skill"><svg class="ico"><use href="#sk-article"/></svg>コンテンツ生成</span></div></div>
       </div>
     </div>
