@@ -112,14 +112,16 @@
   .partners::-webkit-scrollbar{height:8px}
   .partners::-webkit-scrollbar-thumb{background:var(--coral-200);border-radius:99px}
   .partners::-webkit-scrollbar-track{background:transparent}
-  .pcard{flex:0 0 250px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 20px rgba(0,0,0,.04)}
-  .pcard .photo{height:200px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
-  .pcard .photo svg{width:104px;height:104px;color:rgba(255,255,255,.9);margin-bottom:-4px}
-  .pcard .pbody{padding:16px 18px 20px}
-  .pcard .prole{font-family:var(--font-display);font-size:15.5px;font-weight:700;color:var(--ink);margin-bottom:3px}
-  .pcard .parea{font-size:11.5px;color:var(--hint);margin-bottom:13px}
-  .pcard .pskills{display:flex;flex-wrap:wrap;gap:6px}
-  .pcard .pskills span{font-size:10.5px;padding:4px 10px;border-radius:99px;background:var(--coral-50);color:var(--coral-dark)}
+  .pcard{flex:0 0 clamp(280px,86vw,388px);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;box-shadow:0 6px 20px rgba(31,138,77,.05)}
+  .pcard .photo{flex:0 0 150px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+  .pcard .photo svg{width:92px;height:92px;color:rgba(255,255,255,.92);margin-bottom:-2px}
+  .pcard .photo img{width:100%;height:100%;object-fit:cover}
+  .pcard .pbody{flex:1;min-width:0;padding:18px;display:flex;flex-direction:column;justify-content:center}
+  .pcard .prole{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px}
+  .pcard .parea{font-size:11.5px;color:var(--hint);margin-bottom:14px;line-height:1.5}
+  .pcard .pskills{display:flex;flex-wrap:wrap;gap:7px}
+  .pcard .skill{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:500;color:var(--coral-dark);background:var(--coral-50);border-radius:99px;padding:4px 11px 4px 8px}
+  .pcard .skill .ico{width:14px;height:14px;color:var(--coral)}
   .flick-hint{display:flex;align-items:center;justify-content:flex-end;gap:6px;font-size:12px;color:var(--hint);margin-top:8px}
   .flick-hint svg{width:16px;height:16px}
 
@@ -247,6 +249,21 @@
 </head>
 <body>
 
+<!-- スキルアイコン用スプライト（パートナーカードで参照） -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="sk-design" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"/><path d="M13.5 6.5l4 4"/></symbol>
+  <symbol id="sk-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"/><path d="M4 9h16"/><path d="M9 9v11"/></symbol>
+  <symbol id="sk-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8h.01"/><path d="M4 4m0 3a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-10a3 3 0 0 1 -3 -3z"/><path d="M4 15l4 -4a3 5 0 0 1 3 0l5 5"/><path d="M14 14l1 -1a3 5 0 0 1 3 0l2 2"/></symbol>
+  <symbol id="sk-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M17 17h-11v-14h-2"/><path d="M6 5l14 1l-1 7h-13"/></symbol>
+  <symbol id="sk-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M9 17v-5"/><path d="M13 17v-3"/><path d="M17 17v-7"/></symbol>
+  <symbol id="sk-article" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"/><path d="M9 13l6 0"/><path d="M9 17l6 0"/></symbol>
+  <symbol id="sk-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2"/><path d="M12 13m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/></symbol>
+  <symbol id="sk-video" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z"/><path d="M3 6m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z"/></symbol>
+  <symbol id="sk-ads" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a3 3 0 0 1 0 6"/><path d="M10 8v11a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-5"/><path d="M12 8h0l4.524 -3.77a.9 .9 0 0 1 1.476 .692v12.156a.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1z"/></symbol>
+  <symbol id="sk-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8l-4 4l4 4"/><path d="M17 8l4 4l-4 4"/><path d="M14 4l-4 16"/></symbol>
+  <symbol id="sk-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M16.5 7.5l0 .01"/></symbol>
+</svg>
+
 <header>
   <div class="wrap nav">
     <a href="#" class="logo"><img src="https://mitukuru.com/img/logo_miturukuru.svg" alt="みつくる"></a>
@@ -354,35 +371,35 @@
     <div class="partners">
       <div class="pcard">
         <div class="photo" style="background:linear-gradient(140deg,#4FB477,#1F8A4D)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
-        <div class="pbody"><div class="prole">Webデザイナー</div><div class="parea">UI ／ LP ／ バナー</div><div class="pskills"><span>LP制作</span><span>UIデザイン</span><span>バナー</span></div></div>
+        <div class="pbody"><div class="prole">Webデザイナー</div><div class="parea">UI ／ LP ／ バナー</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-design"/></svg>LPデザイン</span><span class="skill"><svg class="ico"><use href="#sk-layout"/></svg>UI設計</span><span class="skill"><svg class="ico"><use href="#sk-image"/></svg>バナー</span></div></div>
       </div>
       <div class="pcard">
         <div class="photo" style="background:linear-gradient(140deg,#8FB573,#5C8A3C)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
-        <div class="pbody"><div class="prole">ECコンサルタント</div><div class="parea">楽天 ／ Amazon ／ Shopify</div><div class="pskills"><span>モール運用</span><span>CVR改善</span><span>商品ページ</span></div></div>
+        <div class="pbody"><div class="prole">ECコンサルタント</div><div class="parea">楽天 ／ Amazon ／ Shopify</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-cart"/></svg>モール運用</span><span class="skill"><svg class="ico"><use href="#sk-chart"/></svg>売上改善</span><span class="skill"><svg class="ico"><use href="#sk-layout"/></svg>商品ページ</span></div></div>
       </div>
       <div class="pcard">
         <div class="photo" style="background:linear-gradient(140deg,#4FB4A0,#0F6E56)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
-        <div class="pbody"><div class="prole">ライター</div><div class="parea">SEO記事 ／ セールス文</div><div class="pskills"><span>SEO記事</span><span>LP原稿</span><span>SNS文</span></div></div>
+        <div class="pbody"><div class="prole">ライター</div><div class="parea">SEO記事 ／ セールス文</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-article"/></svg>SEO記事</span><span class="skill"><svg class="ico"><use href="#sk-layout"/></svg>LP原稿</span><span class="skill"><svg class="ico"><use href="#sk-ads"/></svg>SNS文</span></div></div>
       </div>
       <div class="pcard">
         <div class="photo" style="background:linear-gradient(140deg,#79B37E,#3F7A4E)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
-        <div class="pbody"><div class="prole">フォトグラファー</div><div class="parea">商品 ／ 人物 ／ 動画</div><div class="pskills"><span>商品撮影</span><span>動画撮影</span><span>レタッチ</span></div></div>
+        <div class="pbody"><div class="prole">フォトグラファー</div><div class="parea">商品 ／ 人物 ／ 動画</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-camera"/></svg>商品撮影</span><span class="skill"><svg class="ico"><use href="#sk-image"/></svg>レタッチ</span><span class="skill"><svg class="ico"><use href="#sk-video"/></svg>動画撮影</span></div></div>
       </div>
       <div class="pcard">
         <div class="photo" style="background:linear-gradient(140deg,#6E9C86,#3A5E4C)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
-        <div class="pbody"><div class="prole">広告運用</div><div class="parea">Google ／ Meta ／ LINE</div><div class="pskills"><span>リスティング</span><span>SNS広告</span><span>運用改善</span></div></div>
+        <div class="pbody"><div class="prole">広告運用</div><div class="parea">Google ／ Meta ／ LINE</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-ads"/></svg>広告運用</span><span class="skill"><svg class="ico"><use href="#sk-chart"/></svg>運用分析</span><span class="skill"><svg class="ico"><use href="#sk-image"/></svg>広告制作</span></div></div>
       </div>
       <div class="pcard">
         <div class="photo" style="background:linear-gradient(140deg,#5BA8B8,#2E6E7E)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
-        <div class="pbody"><div class="prole">エンジニア</div><div class="parea">実装 ／ 構築</div><div class="pskills"><span>WordPress</span><span>Shopify</span><span>API連携</span></div></div>
+        <div class="pbody"><div class="prole">エンジニア</div><div class="parea">実装 ／ 構築</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-code"/></svg>実装・API</span><span class="skill"><svg class="ico"><use href="#sk-cart"/></svg>Shopify</span><span class="skill"><svg class="ico"><use href="#sk-layout"/></svg>WordPress</span></div></div>
       </div>
       <div class="pcard">
         <div class="photo" style="background:linear-gradient(140deg,#57C08A,#2A8F5A)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
-        <div class="pbody"><div class="prole">SNS運用</div><div class="parea">Instagram ／ TikTok</div><div class="pskills"><span>投稿企画</span><span>リール制作</span><span>運用代行</span></div></div>
+        <div class="pbody"><div class="prole">SNS運用</div><div class="parea">Instagram ／ TikTok</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-instagram"/></svg>投稿企画</span><span class="skill"><svg class="ico"><use href="#sk-video"/></svg>リール制作</span><span class="skill"><svg class="ico"><use href="#sk-ads"/></svg>運用代行</span></div></div>
       </div>
       <div class="pcard">
         <div class="photo" style="background:linear-gradient(140deg,#3E8A63,#14633A)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0 -9z"/><path d="M4 22a8 8 0 0 1 16 0z"/></svg></div>
-        <div class="pbody"><div class="prole">動画クリエイター</div><div class="parea">編集 ／ モーション</div><div class="pskills"><span>動画編集</span><span>モーション</span><span>テロップ</span></div></div>
+        <div class="pbody"><div class="prole">動画クリエイター</div><div class="parea">編集 ／ モーション</div><div class="pskills"><span class="skill"><svg class="ico"><use href="#sk-video"/></svg>動画編集</span><span class="skill"><svg class="ico"><use href="#sk-image"/></svg>モーション</span><span class="skill"><svg class="ico"><use href="#sk-layout"/></svg>テロップ</span></div></div>
       </div>
     </div>
   </div>
