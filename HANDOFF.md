@@ -5,18 +5,18 @@
 ---
 
 ## プロジェクト概要
-- 対象：みつくる（https://mitukuru.com/）のトップページ デザイン改善。
-- 成果物：
-  - `index.html` ＋ `styles.css` ＋ `script.js` ＋ `assets/`（**本実装**：セマンティックHTML/CSS、モバイルファースト、BP 768px/1024px。フォント Noto Sans JP）。
-  - `mitukuru-top.html`（初期プロトタイプ。1ファイル完結。デザインの出発点として保持）。
-- デザインシステム：`.claude/skills/mitsukuru-design/SKILL.md`（カラートークン・タイポ・コンポーネント・レスポンシブ規約。`mitukuru-top.html`/本メモから抽出）。
-- 目的：文章のわかりやすさ・構成・デザイン・UI/UX の改善モックを作る。実サイトのコードは未接続。
+- 対象：みつくる／**ミツクル**（WEBマーケティング ワンストップ支援）のトップページ。
+- 成果物（**現行の本実装＝公式ハンドオフバンドル「ミツクル.dc.html」の再現**）：
+  - `index.html` ＋ `styles.css` ＋ `script.js` ＋ `assets/`（セマンティックHTML/CSS、モバイルファースト、BP 768px/1024px、Noto Sans JP 400-900）。
+  - 参考：`mitukuru-top.html`（初期プロトタイプ、みつくる・濃緑）。`*.dc.html`/`support.js` は元バンドル（dc-runtime用、編集対象外）。
+- デザインシステム：`.claude/skills/mitsukuru-design/SKILL.md`（ミツクルのライトグリーン `#7CB342` トークン・コンポーネント・レスポンシブ規約。バンドルから抽出）。
 
-### 本実装（index.html）の構成・仕様
-- セクション順：ヘッダー / ヒーロー / お悩み / 作れるもの / 選ばれる理由 / 使い方の流れ / 事例 / パートナー / よくある質問 / 末尾CTA / フッター。
-- ヘッダーナビはアンカーリンク（#make/#flow/#works/#faq/#contact）。<768px はハンバーガー（`script.js`）。
-- FAQは**JSアコーディオン**（`<button aria-expanded>`＋`grid-template-rows:0fr→1fr` アニメ、1つずつ開く）。
-- 画像は `assets/`（`hero-illust.png`/`partner-1〜8.png`/自社ホスティングSVGロゴ `logo.svg`）に配置し相対パス参照。
+### 本実装（index.html / ミツクル）の構成・仕様
+- ブランド：**ミツクル**。配色は**ライトグリーン `#7CB342`**（濃 `#689A38/#5F9233`、淡 `#FAFBF7/#EFF6E4/#F6FAEF`、文字 `#2B2B2B`/`#6B7280`）。見出しは**900**。
+- セクション順：ヘッダー / ヒーロー / お悩み(＋価値バナー) / 作れるもの(6) / 選ばれる理由(01-03) / 使い方の流れ(4ステップ＋矢印) / 事例(Before→After 3) / パートナー(アバター8) / よくある質問 / 末尾CTA / フッター。
+- ヘッダーナビはアンカーリンク（#make/#why/#how/#works/#faq/#cta）。<768px はハンバーガー（`script.js`）。
+- FAQは**JSアコーディオン**（`<button aria-expanded>`＋`grid-template-rows:0fr→1fr`、+/−トグル、1つずつ開く）。
+- 画像は `assets/`（全29点：`logo.png`/`hero-illustration-trim.png`/`pain-1〜3`/`make-*`/`why-1〜3`/`step-01〜04`/`case-1〜3`/`partner-*`）に配置し相対パス参照。Google ドライブ経由で取得。
 - アイコンはインラインSVGスプライト（`#i-*`）＋`<use>`。`:focus-visible`・`prefers-reduced-motion` 対応。
 
 
