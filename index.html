@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>みつくる｜ヒアリングシートに答えるだけで、お見積もりと構成のご提案が届きます</title>
+<meta name="description" content="ヒアリングシートに答えるだけで、お見積もりと構成のご提案が届きます。Webサイト・EC・LP・SNS・動画まで、必要な分だけ。スキルを持つ外部パートナーとの協業も。相談は無料です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- アイコン・スプライト（線画SVG／装飾は aria-hidden で参照） -->
+<svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="M6 6l12 12"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"/><path d="M13.5 6.5l4 4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6l6 -6"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M10.24 3.957l-8.422 14.06a1.989 1.989 0 0 0 1.7 2.983h16.845a1.989 1.989 0 0 0 1.7 -2.983l-8.423 -14.06a1.989 1.989 0 0 0 -3.4 0z"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10 -10"/></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"/><path d="M4 9h16"/><path d="M9 9v11"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M17 17h-11v-14h-2"/><path d="M6 5l14 1l-1 7h-13"/></symbol>
+  <symbol id="i-browser" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"/><path d="M4 8h16"/><path d="M8 6h.01"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z"/><path d="M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z"/><path d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M16.5 7.5l0 .01"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z"/><path d="M3 6m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16"/><path d="M9 8h1"/><path d="M9 12h1"/><path d="M14 8h1"/><path d="M14 12h1"/></symbol>
+  <symbol id="i-design" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"/><path d="M13.5 6.5l4 4"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8h.01"/><path d="M4 4m0 3a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-10a3 3 0 0 1 -3 -3z"/><path d="M4 15l4 -4a3 5 0 0 1 3 0l5 5"/><path d="M14 14l1 -1a3 5 0 0 1 3 0l2 2"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M9 17v-5"/><path d="M13 17v-3"/><path d="M17 17v-7"/></symbol>
+  <symbol id="i-article" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"/><path d="M9 13l6 0"/><path d="M9 17l6 0"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2"/><path d="M12 13m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/></symbol>
+  <symbol id="i-ads" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a3 3 0 0 1 0 6"/><path d="M10 8v11a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-5"/><path d="M12 8h0l4.524 -3.77a.9 .9 0 0 1 1.476 .692v12.156a.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1z"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8l-4 4l4 4"/><path d="M17 8l4 4l-4 4"/><path d="M14 4l-4 16"/></symbol>
+  <symbol id="i-direct" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"/><path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/><path d="M9 14l2 2l4 -4"/></symbol>
+</svg>
+
+<!-- ============ ヘッダー ============ -->
+<header class="site-header" id="top">
+  <div class="container site-header__inner">
+    <a href="#top" class="logo" aria-label="みつくる ホーム"><img src="assets/logo.svg" alt="みつくる" width="156" height="32"></a>
+    <nav class="nav" id="primary-nav" aria-label="メインナビゲーション">
+      <ul class="nav__list">
+        <li><a href="#make">作れるもの</a></li>
+        <li><a href="#flow">使い方</a></li>
+        <li><a href="#works">事例</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a class="btn btn--primary nav__cta" href="#contact">無料で試す</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="primary-nav">
+      <svg class="icon nav-toggle__open" aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg class="icon nav-toggle__close" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ ヒーロー ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <span class="eyebrow">相談は無料</span>
+        <h1 id="hero-title" class="hero__title"><span class="hero__line">ヒアリングシートに答えるだけ。</span><span class="hero__line">お見積もりと構成提案が、<span class="mark">届く！</span></span></h1>
+        <p class="hero__lead">Web制作・EC・マーケで「やりたいこと」を書くだけ。たたき台が手に入るから、迷わず最初の一歩を踏み出せます。</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="#contact"><svg class="icon" aria-hidden="true"><use href="#i-edit"/></svg>無料でシートに答えてみる</a>
+          <a class="btn btn--ghost" href="#contact">まずはオンラインで相談する</a>
+        </div>
+        <ul class="trust">
+          <li class="pill">お見積もりが届く</li>
+          <li class="pill">構成のご提案つき</li>
+          <li class="pill">費用はかかりません</li>
+        </ul>
+      </div>
+      <figure class="hero__figure" aria-hidden="true">
+        <img src="assets/hero-illust.png" alt="" width="460" height="328">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ お悩み ============ -->
+  <section class="section section--soft" id="worry" aria-labelledby="worry-title">
+    <div class="container">
+      <h2 class="section__title" id="worry-title">こんなお悩み、ありませんか？</h2>
+      <ul class="worry-grid">
+        <li class="worry"><span class="worry__ic"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg></span>やりたい施策は山ほどあるのに、今日も何も進まなかった</li>
+        <li class="worry"><span class="worry__ic"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg></span>WEBマーケティング、何から始めるのが正解か分からない</li>
+        <li class="worry"><span class="worry__ic"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg></span>外注したいけれど、うまく伝えられる自信がない</li>
+        <li class="worry"><span class="worry__ic"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg></span>SNS・LP・動画…点で終わって、成果につながらない</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 作れるもの ============ -->
+  <section class="section" id="make" aria-labelledby="make-title">
+    <div class="container">
+      <h2 class="section__title" id="make-title">「やりたいこと」を、カタチにできます</h2>
+      <p class="section__lead">WebサイトからEC、LP、SNS、動画まで。必要なものを、必要な分だけ作れます。</p>
+      <ul class="make-grid">
+        <li class="make"><span class="make__ic"><svg class="icon" aria-hidden="true"><use href="#i-layout"/></svg></span><h3 class="make__title">Webサイト</h3><p>会社の魅力が伝わる、コーポレート・ブランドサイト。</p></li>
+        <li class="make"><span class="make__ic"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg></span><h3 class="make__title">ECサイト</h3><p>楽天・Amazon・Shopify など、売れる通販の仕組み。</p></li>
+        <li class="make"><span class="make__ic"><svg class="icon" aria-hidden="true"><use href="#i-browser"/></svg></span><h3 class="make__title">ランディングページ</h3><p>お申し込みにつながる、訴求を整理した1枚ページ。</p></li>
+        <li class="make"><span class="make__ic"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></span><h3 class="make__title">商品ページ</h3><p>写真と文章を見直し、売れる商品ページへ制作・改善。</p></li>
+        <li class="make"><span class="make__ic"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></span><h3 class="make__title">SNS・バナー</h3><p>Instagram運用や広告バナーで、こまめに発信。</p></li>
+        <li class="make"><span class="make__ic"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg></span><h3 class="make__title">動画</h3><p>サービスや商品の魅力を、短い動画でわかりやすく。</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 選ばれる理由 ============ -->
+  <section class="section section--soft" id="reasons" aria-labelledby="reasons-title">
+    <div class="container">
+      <h2 class="section__title" id="reasons-title">みつくるが選ばれる理由</h2>
+      <ul class="reason-grid">
+        <li class="reason"><span class="reason__ic"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><div><h3 class="reason__title">小さく始められます</h3><p>1ページ・1投稿から。いきなり大きく構えなくて大丈夫です。</p></div></li>
+        <li class="reason"><span class="reason__ic"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><div><h3 class="reason__title">お手元の資料を活かせます</h3><p>すでにある資料を、そのままご提案づくりに活用できます。</p></div></li>
+        <li class="reason"><span class="reason__ic"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><div><h3 class="reason__title">AIと人の、いいとこ取り</h3><p>たたき台はAIが、最終的な仕上げは人が担当します。</p></div></li>
+        <li class="reason"><span class="reason__ic"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><div><h3 class="reason__title">管理の手間がいりません</h3><p>ディレクションや進行管理はおまかせ。本業に集中いただけます。</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 使い方の流れ ============ -->
+  <section class="section" id="flow" aria-labelledby="flow-title">
+    <div class="container">
+      <h2 class="section__title" id="flow-title">ご利用は、とてもかんたんです</h2>
+      <p class="section__lead">外部パートナーへのご依頼まで、手間はかかりません。</p>
+      <ol class="flow-grid">
+        <li class="step"><span class="step__n">1</span><h3 class="step__title">シートに答える</h3><p>やりたいことを質問に沿って書くだけ。</p></li>
+        <li class="step"><span class="step__n">2</span><h3 class="step__title">ご提案が届く</h3><p>お見積もりと構成のご提案を受け取る。</p></li>
+        <li class="step"><span class="step__n">3</span><h3 class="step__title">パートナーをご紹介</h3><p>会員登録で、スキルの合う方をご紹介。</p></li>
+        <li class="step"><span class="step__n">4</span><h3 class="step__title">小ロットで依頼</h3><p>管理はおまかせ。そのままご依頼へ。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 事例 ============ -->
+  <section class="section section--soft" id="works" aria-labelledby="works-title">
+    <div class="container">
+      <h2 class="section__title" id="works-title">ご相談から生まれた事例</h2>
+      <p class="section__lead">Webサイト・EC・LP・SNS・動画まで、さまざまなご相談にお応えしてきました。</p>
+      <!-- ▼ .case__thumb はサムネイル画像枠。背景グラデーションを実画像に差し替え可 -->
+      <ul class="works-grid">
+        <li class="case"><div class="case__thumb" style="--g1:#4FB477;--g2:#1F8A4D"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg></div><div class="case__body"><span class="tag">ECサイト構築</span><h3 class="case__title">アパレルD2Cの自社EC立ち上げ</h3><p>ブランドの世界観に合わせたストアを構築し、販売をスタートしました。</p></div></li>
+        <li class="case"><div class="case__thumb" style="--g1:#8FB573;--g2:#5C8A3C"><svg class="icon" aria-hidden="true"><use href="#i-browser"/></svg></div><div class="case__body"><span class="tag">ランディングページ</span><h3 class="case__title">健康食品の定期通販LP</h3><p>訴求を整理し、お申し込みまでの導線をわかりやすく改善しました。</p></div></li>
+        <li class="case"><div class="case__thumb" style="--g1:#6E9C86;--g2:#3A5E4C"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></div><div class="case__body"><span class="tag">コーポレートサイト</span><h3 class="case__title">製造業の企業サイトリニューアル</h3><p>情報を整理し、お問い合わせにつながりやすい構成へ刷新しました。</p></div></li>
+        <li class="case"><div class="case__thumb" style="--g1:#4FB4A0;--g2:#0F6E56"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></div><div class="case__body"><span class="tag">商品ページ改善</span><h3 class="case__title">雑貨ECの売れる商品ページ</h3><p>写真と文章を見直し、商品の魅力が伝わるページに整えました。</p></div></li>
+        <li class="case"><div class="case__thumb" style="--g1:#79B37E;--g2:#3F7A4E"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></div><div class="case__body"><span class="tag">SNS運用</span><h3 class="case__title">飲食店のInstagram運用</h3><p>投稿企画から制作まで、無理なく続けられる体制をつくりました。</p></div></li>
+        <li class="case"><div class="case__thumb" style="--g1:#3E8A63;--g2:#14633A"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg></div><div class="case__body"><span class="tag">動画制作</span><h3 class="case__title">サービス紹介動画の制作</h3><p>サービスの魅力を、短い動画でわかりやすくお伝えしました。</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ パートナー ============ -->
+  <section class="section" id="partners" aria-labelledby="partners-title">
+    <div class="container">
+      <h2 class="section__title" id="partners-title">ご提案の後は、最適なパートナーに頼むだけ</h2>
+      <p class="section__lead">会員登録いただくと、シートの内容に合うスキルを持った外部パートナーをご紹介します。ディレクションや管理はおまかせで、1ページ・1投稿から小ロットでご依頼いただけます。</p>
+    </div>
+    <!-- ▼ 各カードの .partner__photo はイラスト枠 -->
+    <ul class="partners" aria-label="パートナー一覧">
+      <li class="partner"><div class="partner__photo" style="--g1:#4FB477;--g2:#1F8A4D"><img src="assets/partner-1.png" alt="デザイナーのイラスト" width="150" height="150"></div><div class="partner__body"><h3 class="partner__role">デザイナー</h3><p class="partner__area">Web・グラフィック制作</p><ul class="skills"><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-design"/></svg>デザイン</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-layout"/></svg>LP・UI</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-image"/></svg>バナー</li></ul></div></li>
+      <li class="partner"><div class="partner__photo" style="--g1:#8FB573;--g2:#5C8A3C"><img src="assets/partner-2.png" alt="ディレクターのイラスト" width="150" height="150"></div><div class="partner__body"><h3 class="partner__role">ディレクター</h3><p class="partner__area">進行・品質の管理</p><ul class="skills"><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-direct"/></svg>進行管理</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-article"/></svg>企画設計</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg>品質チェック</li></ul></div></li>
+      <li class="partner"><div class="partner__photo" style="--g1:#4FB4A0;--g2:#0F6E56"><img src="assets/partner-3.png" alt="ECモール戦略のイラスト" width="150" height="150"></div><div class="partner__body"><h3 class="partner__role">ECモール戦略</h3><p class="partner__area">楽天 ／ Amazon ／ Shopify</p><ul class="skills"><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg>モール運用</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg>売上分析</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-layout"/></svg>商品ページ</li></ul></div></li>
+      <li class="partner"><div class="partner__photo" style="--g1:#79B37E;--g2:#3F7A4E"><img src="assets/partner-4.png" alt="広告運用のイラスト" width="150" height="150"></div><div class="partner__body"><h3 class="partner__role">広告運用</h3><p class="partner__area">Google ／ Meta ／ LINE</p><ul class="skills"><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-ads"/></svg>広告運用</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg>運用分析</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-image"/></svg>広告制作</li></ul></div></li>
+      <li class="partner"><div class="partner__photo" style="--g1:#6E9C86;--g2:#3A5E4C"><img src="assets/partner-5.png" alt="マーケターのイラスト" width="150" height="150"></div><div class="partner__body"><h3 class="partner__role">マーケター</h3><p class="partner__area">戦略 ／ 分析 ／ 集客</p><ul class="skills"><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg>データ分析</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-article"/></svg>企画立案</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-ads"/></svg>集客施策</li></ul></div></li>
+      <li class="partner"><div class="partner__photo" style="--g1:#5BA8B8;--g2:#2E6E7E"><img src="assets/partner-6.png" alt="インフルエンサーのイラスト" width="150" height="150"></div><div class="partner__body"><h3 class="partner__role">インフルエンサー</h3><p class="partner__area">SNS ／ PR</p><ul class="skills"><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>SNS発信</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg>リール制作</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-ads"/></svg>PR・拡散</li></ul></div></li>
+      <li class="partner"><div class="partner__photo" style="--g1:#57C08A;--g2:#2A8F5A"><img src="assets/partner-7.png" alt="映像制作のイラスト" width="150" height="150"></div><div class="partner__body"><h3 class="partner__role">映像制作</h3><p class="partner__area">撮影 ／ 編集</p><ul class="skills"><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg>動画編集</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg>撮影</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-image"/></svg>モーション</li></ul></div></li>
+      <li class="partner"><div class="partner__photo" style="--g1:#3E8A63;--g2:#14633A"><img src="assets/partner-8.png" alt="AIのイラスト" width="150" height="150"></div><div class="partner__body"><h3 class="partner__role">AI</h3><p class="partner__area">AI活用 ／ 自動化</p><ul class="skills"><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>AI活用</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>自動化</li><li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-article"/></svg>コンテンツ生成</li></ul></div></li>
+    </ul>
+    <div class="container">
+      <p class="flick-hint"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>横にスクロールしてご覧いただけます</p>
+    </div>
+  </section>
+
+  <!-- ============ よくある質問（アコーディオン） ============ -->
+  <section class="section section--soft" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <h2 class="section__title" id="faq-title">よくいただくご質問</h2>
+      <div class="faq">
+        <div class="faq__item is-open">
+          <h3 class="faq__h"><button type="button" class="faq__q" aria-expanded="true" aria-controls="faq-a1"><span><span class="faq__qmark">Q</span>相談に費用はかかりますか？</span><svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="faq__a" id="faq-a1"><div class="faq__a-inner"><p>相談は無料です。シートへのご回答から、お見積もりと構成のご提案まで、費用はかかりません。</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3 class="faq__h"><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a2"><span><span class="faq__qmark">Q</span>相談だけでも利用できますか？</span><svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="faq__a" id="faq-a2"><div class="faq__a-inner"><p>はい、無料相談のみでも問題ありません。ご依頼するかどうかは、ご提案をご覧になってから決めていただけます。</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3 class="faq__h"><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a3"><span><span class="faq__qmark">Q</span>小さな依頼でも対応してもらえますか？</span><svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="faq__a" id="faq-a3"><div class="faq__a-inner"><p>1ページ、1投稿から対応しています。まずは小さく試して、反応を見ながら進めていただけます。</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3 class="faq__h"><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a4"><span><span class="faq__qmark">Q</span>AIが作ったご提案の品質が心配です。</span><svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="faq__a" id="faq-a4"><div class="faq__a-inner"><p>AIはあくまで「たたき台」をすばやくご用意するためのものです。外部パートナーへご依頼いただく場合は、最終的な仕上げを人が行います。</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3 class="faq__h"><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a5"><span><span class="faq__qmark">Q</span>費用が膨らまないか不安です。</span><svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="faq__a" id="faq-a5"><div class="faq__a-inner"><p>内容を整理してから、必要な分だけご提案します。小ロットでのご依頼が基本ですので、ご予算に合わせて進められます。</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 末尾CTA ============ -->
+  <section class="section" id="contact" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta">
+        <h2 class="cta__title" id="cta-title">まずは、お気軽にお試しください</h2>
+        <p class="cta__lead">シートに答えるだけ。お見積もりと構成のご提案が<span class="mark">届きます</span>。</p>
+        <div class="btn-row btn-row--center">
+          <a class="btn btn--primary" href="#"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>無料でシートに答えてみる</a>
+          <a class="btn btn--ghost" href="#">まずはオンラインで相談する</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ フッター ============ -->
+<footer class="site-footer">
+  <div class="container site-footer__top">
+    <div class="site-footer__brand">
+      <a href="#top" class="logo logo--invert" aria-label="みつくる ホーム"><img src="assets/logo.svg" alt="みつくる" width="156" height="32"></a>
+      <p class="site-footer__tagline">やりたいことを、<br>むりなく前に進めるお手伝いをします。</p>
+    </div>
+    <nav class="site-footer__links" aria-label="フッターナビゲーション">
+      <div class="foot-col">
+        <h2 class="foot-col__h">できること</h2>
+        <ul>
+          <li><a href="#contact">お見積もり・構成のご提案</a></li>
+          <li><a href="#partners">パートナーとの協業</a></li>
+          <li><a href="#make">作れるもの</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h2 class="foot-col__h">運営情報</h2>
+        <ul>
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">特定商取引法に基づく表記</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h2 class="foot-col__h">お問い合わせ</h2>
+        <ul>
+          <li><a href="#contact">無料で相談する</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="container"><p class="copy">&copy; 2026 みつくる. All rights reserved.</p></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

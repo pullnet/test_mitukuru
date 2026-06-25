@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 32" role="img" aria-label="みつくる">
+  <g fill="none" stroke="#1F8A4D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 28V15"/>
+    <path d="M15 18C15 13 11.5 9.5 6 9.5C6 15 9.5 18 15 18Z"/>
+    <path d="M15 16C15 11.5 18.5 8 24 8C24 13.5 20.5 16 15 16Z"/>
+  </g>
+  <text x="34" y="23" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic',system-ui,sans-serif" font-size="19" font-weight="700" letter-spacing="0.04em" fill="#0C3F26">みつくる</text>
+</svg>

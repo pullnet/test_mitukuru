@@ -6,8 +6,19 @@
 
 ## プロジェクト概要
 - 対象：みつくる（https://mitukuru.com/）のトップページ デザイン改善。
-- 成果物：`mitukuru-top.html`（1ファイル完結の静的HTML/CSS、フォントは Noto Sans JP）。
+- 成果物：
+  - `index.html` ＋ `styles.css` ＋ `script.js` ＋ `assets/`（**本実装**：セマンティックHTML/CSS、モバイルファースト、BP 768px/1024px。フォント Noto Sans JP）。
+  - `mitukuru-top.html`（初期プロトタイプ。1ファイル完結。デザインの出発点として保持）。
+- デザインシステム：`.claude/skills/mitsukuru-design/SKILL.md`（カラートークン・タイポ・コンポーネント・レスポンシブ規約。`mitukuru-top.html`/本メモから抽出）。
 - 目的：文章のわかりやすさ・構成・デザイン・UI/UX の改善モックを作る。実サイトのコードは未接続。
+
+### 本実装（index.html）の構成・仕様
+- セクション順：ヘッダー / ヒーロー / お悩み / 作れるもの / 選ばれる理由 / 使い方の流れ / 事例 / パートナー / よくある質問 / 末尾CTA / フッター。
+- ヘッダーナビはアンカーリンク（#make/#flow/#works/#faq/#contact）。<768px はハンバーガー（`script.js`）。
+- FAQは**JSアコーディオン**（`<button aria-expanded>`＋`grid-template-rows:0fr→1fr` アニメ、1つずつ開く）。
+- 画像は `assets/`（`hero-illust.png`/`partner-1〜8.png`/自社ホスティングSVGロゴ `logo.svg`）に配置し相対パス参照。
+- アイコンはインラインSVGスプライト（`#i-*`）＋`<use>`。`:focus-visible`・`prefers-reduced-motion` 対応。
+
 
 ## サービス内容（正確な前提・誇張しない）
 3つは**それぞれ独立したサービス**：
@@ -40,11 +51,12 @@
 12. 最終CTA / フッター（運営情報・特商法リンク枠）
 
 ## 残タスク
-- ロゴを自社ホスティングに。
-- 事例・画像を実データに差し替え。
-- 実装スタック（React/Next.js・WordPress等）に合わせたコンポーネント化。
+- 事例・画像を実データに差し替え（`assets/` のグラデーション枠を実画像へ）。
+- 実装スタック（React/Next.js・WordPress等）に合わせたコンポーネント化（`index.html` のセクション＝コンポーネント単位で分割可）。
 
 ### 完了済み
+- `index.html`＋`styles.css`＋`script.js`＋`assets/` で本実装（セマンティック・モバイルファースト・BP 768/1024）。デザインシステムを `.claude/skills/mitsukuru-design/` に整備。
+- ロゴを自社ホスティング化（`assets/logo.svg` のワードマーク。元サイト/参照サイトは環境のネットワークポリシーで取得不可のため自作）。
 - パートナーカード8名のクリエイターイラストを配置（`img/partner-1.png`〜`partner-8.png`、左の `.photo` 枠に `object-fit:contain` で表示）。Google ドライブ経由で取得（元サイト `xs495568.xsrv.jp` はネットワークポリシーで直接取得不可）。
 - `img/hero-illust.png` を配置（ヒーロー右に表示・`mix-blend-mode:multiply` で背景になじませ）。
 - ハンバーガーメニューの開閉JS実装（`.nav-open` トグル、Esc・リンクタップ・PC幅復帰で閉じる、aria-expanded連動）。
