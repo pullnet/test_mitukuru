@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>下層ページ｜ミツクル</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="new_styles.css">
+<style>
+.sub-grid { display: grid; grid-template-columns: 1.6fr 0.9fr; gap: 56px; align-items: start; }
+@media (max-width: 880px) {
+    .sub-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+</style>
+</head>
+<body>
+<div style="font-family: 'Noto Sans JP', sans-serif; color: #2B2B2B; background: #ffffff; line-height: 1.8; -webkit-font-smoothing: antialiased;">
+
+  <!-- ============ HEADER（トップページから継承）============ -->
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.88); backdrop-filter: blur(10px); border-bottom: 1px solid #E5E7EB;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 32px;">
+      <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="assets/logo.png" alt="ミツクル — 見積りと制作依頼をワンストップで" style="height: 44px; width: auto; display: block;">
+      </a>
+      <nav style="display: flex; align-items: center; gap: 34px; font-size: 15px; font-weight: 500;">
+        <a href="#" style="color: #2B2B2B; text-decoration: none;">特長</a>
+        <a href="#" style="color: #2B2B2B; text-decoration: none;">作れるもの</a>
+        <a href="#" style="color: #2B2B2B; text-decoration: none;">選ばれる理由</a>
+        <a href="index.html#faq" style="color: #2B2B2B; text-decoration: none;">よくある質問</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="#" style="font-size: 15px; font-weight: 700; color: #2B2B2B; text-decoration: none;">お問い合わせ</a>
+        <a href="hearing.html" style="font-size: 15px; font-weight: 700; color: #ffffff; background: #7CB342; padding: 12px 26px; border-radius: 9999px; text-decoration: none; box-shadow: 0 4px 14px rgba(124,179,66,0.35);" style-hover="background: #689A38;">無料で始める</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ ページヘッダー（タイトル + パンくず）============ -->
+  <section style="position: relative; overflow: hidden; background: #EFF6E4; border-bottom: 1px solid #E5E7EB;">
+    <div style="position: absolute; top: -90px; right: -50px; width: 280px; height: 280px; border-radius: 50%; background: rgba(124,179,66,0.10); pointer-events: none;"></div>
+    <div style="position: absolute; bottom: -110px; right: 160px; width: 200px; height: 200px; border-radius: 50%; background: rgba(124,179,66,0.07); pointer-events: none;"></div>
+    <div style="position: absolute; bottom: -70px; left: -40px; width: 170px; height: 170px; border-radius: 50%; border: 1.5px solid rgba(124,179,66,0.16); pointer-events: none;"></div>
+    <div style="position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 56px 32px 60px;">
+      <!-- パンくず -->
+      <nav aria-label="パンくずリスト" style="display: flex; align-items: center; gap: 10px; font-size: 13.5px; font-weight: 500; color: #6B7280; margin-bottom: 22px;">
+        <a href="index.html" style="color: #5F9233; text-decoration: none; font-weight: 700;" style-hover="text-decoration: underline;">ホーム</a>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9CC766" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"></polyline></svg>
+        <span style="color: #6B7280;">○○</span>
+      </nav>
+      <div style="display: inline-flex; align-items: center; gap: 8px; background: #ffffff; color: #5C8A2E; font-size: 12.5px; font-weight: 700; padding: 7px 15px; border-radius: 9999px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(104,154,56,0.10);">
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: #7CB342;"></span>
+        ○○○○○○
+      </div>
+      <h1 style="font-size: 38px; font-weight: 900; line-height: 1.45; letter-spacing: 0.005em; margin: 0 0 16px;">○○ページ</h1>
+      <p style="font-size: 16.5px; color: #6B7280; line-height: 1.9; margin: 0; max-width: 640px;">このページの概要をここに記載します。トップページのデザインシステムをそのまま引き継いだ下層ページのテンプレートです。見出し・本文・カードなどの要素を差し替えてご利用ください。</p>
+    </div>
+  </section>
+
+  <!-- ============ 本文 ============ -->
+  <section style="background: #ffffff;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 80px 32px;">
+      <div class="sub-grid">
+
+        <!-- 本文カラム -->
+        <div>
+          <div style="font-size: 13px; font-weight: 700; color: #7CB342; letter-spacing: 0.08em; margin-bottom: 12px;">SECTION</div>
+          <h2 style="font-size: 27px; font-weight: 900; line-height: 1.5; margin: 0 0 20px;">見出しがここに入ります</h2>
+          <p style="font-size: 15.5px; color: #4B5563; line-height: 1.95; margin: 0 0 22px;">本文のテキストがここに入ります。トップページと同じ余白・行間・配色を用いることで、サイト全体で一貫した体験を提供します。実際のコンテンツに合わせて、文章量や構成を調整してください。</p>
+          <p style="font-size: 15.5px; color: #4B5563; line-height: 1.95; margin: 0 0 40px;">段落を重ねる場合も、読みやすさを保つために十分な行間と余白を確保します。リンクは<a href="#" style="color: #5F9233; font-weight: 700; text-decoration: none; border-bottom: 1.5px solid #C9E3A6;" style-hover="border-color: #7CB342;">このように</a>表現します。</p>
+
+          <!-- 小見出し + リスト -->
+          <h3 style="font-size: 19px; font-weight: 700; line-height: 1.5; margin: 0 0 18px; padding-left: 14px; border-left: 4px solid #7CB342;">ポイント</h3>
+          <ul style="list-style: none; margin: 0 0 44px; padding: 0; display: flex; flex-direction: column; gap: 14px;">
+            <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: #4B5563; line-height: 1.85;">
+              <span style="flex: none; margin-top: 3px; width: 22px; height: 22px; border-radius: 50%; background: #EFF6E4; color: #5F9233; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900;">✓</span>
+              <span>項目の内容をここに記載します。やわらかい印象を保ちながら要点を伝えます。</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: #4B5563; line-height: 1.85;">
+              <span style="flex: none; margin-top: 3px; width: 22px; height: 22px; border-radius: 50%; background: #EFF6E4; color: #5F9233; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900;">✓</span>
+              <span>2つ目の項目。リスト形式で要点を整理して伝えられます。</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: #4B5563; line-height: 1.85;">
+              <span style="flex: none; margin-top: 3px; width: 22px; height: 22px; border-radius: 50%; background: #EFF6E4; color: #5F9233; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900;">✓</span>
+              <span>3つ目の項目。必要に応じて増減してください。</span>
+            </li>
+          </ul>
+
+          <!-- カード 2列 -->
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+            <div style="position: relative; overflow: hidden; background: #ffffff; border-radius: 18px; padding: 30px 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: box-shadow .28s ease, transform .28s ease;" style-hover="box-shadow: 0 16px 36px rgba(124,179,66,0.20); transform: translateY(-4px);">
+              <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #8FC74F 0%, #689A38 100%); box-shadow: 0 5px 12px rgba(104,154,56,0.30); display: flex; align-items: center; justify-content: center; margin-bottom: 18px;">
+                <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polygon points="15.5 8.5 13 13 8.5 15.5 11 11"></polygon></svg>
+              </div>
+              <h4 style="font-size: 16px; font-weight: 700; line-height: 1.5; margin: 0 0 10px;">カード見出し</h4>
+              <p style="font-size: 14px; color: #6B7280; line-height: 1.85; margin: 0;">カードの説明文がここに入ります。トップページと同じ角丸とやわらかい影で統一します。</p>
+            </div>
+            <div style="position: relative; overflow: hidden; background: #ffffff; border-radius: 18px; padding: 30px 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: box-shadow .28s ease, transform .28s ease;" style-hover="box-shadow: 0 16px 36px rgba(124,179,66,0.20); transform: translateY(-4px);">
+              <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #8FC74F 0%, #689A38 100%); box-shadow: 0 5px 12px rgba(104,154,56,0.30); display: flex; align-items: center; justify-content: center; margin-bottom: 18px;">
+                <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"></polyline><polyline points="15 7 21 7 21 13"></polyline></svg>
+              </div>
+              <h4 style="font-size: 16px; font-weight: 700; line-height: 1.5; margin: 0 0 10px;">カード見出し</h4>
+              <p style="font-size: 14px; color: #6B7280; line-height: 1.85; margin: 0;">2つ目のカード。並べて比較・紹介したい要素に使います。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- サイドバー -->
+        <aside style="position: sticky; top: 96px; display: flex; flex-direction: column; gap: 22px;">
+          <div style="background: #FAFBF7; border: 1px solid #EAEFE0; border-radius: 18px; padding: 28px 26px;">
+            <div style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; color: #2B2B2B; margin-bottom: 16px;">目次</div>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+              <li><a href="#" style="font-size: 14px; color: #6B7280; text-decoration: none;" style-hover="color: #7CB342;">見出しがここに入ります</a></li>
+              <li><a href="#" style="font-size: 14px; color: #6B7280; text-decoration: none;" style-hover="color: #7CB342;">ポイント</a></li>
+              <li><a href="#" style="font-size: 14px; color: #6B7280; text-decoration: none;" style-hover="color: #7CB342;">関連カード</a></li>
+            </ul>
+          </div>
+
+          <div style="position: relative; overflow: hidden; background: linear-gradient(135deg, #7CB342 0%, #5F9233 100%); border-radius: 18px; padding: 30px 28px; box-shadow: 0 14px 34px rgba(104,154,56,0.30);">
+            <div style="position: absolute; top: -50px; right: -30px; width: 150px; height: 150px; border-radius: 50%; background: rgba(255,255,255,0.10); pointer-events: none;"></div>
+            <p style="position: relative; z-index: 1; font-size: 17px; font-weight: 900; line-height: 1.6; color: #ffffff; margin: 0 0 18px;">まずは、<br>ヒアリングから。</p>
+            <a href="#" style="position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: #5C8A2E; background: #ffffff; padding: 12px 24px; border-radius: 9999px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.14);" style-hover="transform: translateY(-2px);">
+              無料で相談する
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
+            </a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 末尾CTA（トップページから継承）============ -->
+  <section style="position: relative; overflow: hidden; background: linear-gradient(135deg, #7CB342 0%, #689A38 100%);">
+    <div style="position: absolute; top: -120px; right: -80px; width: 360px; height: 360px; border-radius: 50%; background: rgba(255,255,255,0.08); pointer-events: none;"></div>
+    <div style="position: absolute; bottom: -160px; left: -60px; width: 320px; height: 320px; border-radius: 50%; background: rgba(255,255,255,0.06); pointer-events: none;"></div>
+    <div style="position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 88px 32px; text-align: center;">
+      <h2 style="font-size: 34px; font-weight: 900; line-height: 1.45; color: #ffffff; margin: 0 0 20px;">まずは、ヒアリングから。</h2>
+      <p style="font-size: 16.5px; line-height: 1.95; color: rgba(255,255,255,0.92); margin: 0 0 38px;">3分のシート記入で、提案・見積もり・面談まで。<br>発注するかどうかは、話してから決めて大丈夫です。</p>
+      <a href="#" style="display: inline-flex; align-items: center; gap: 10px; background: #ffffff; color: #5C8A2E; font-size: 17px; font-weight: 800; text-decoration: none; padding: 20px 44px; border-radius: 9999px; box-shadow: 0 12px 30px rgba(0,0,0,0.16); transition: transform .2s ease, box-shadow .2s ease;" style-hover="transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0,0,0,0.22);">
+        無料でヒアリングを始める
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER（トップページから継承）============ -->
+  <footer style="background: #ffffff; border-top: 1px solid #E5E7EB;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 72px 32px 40px;">
+      <div class="footer-grid">
+
+        <div style="max-width: 360px;">
+          <img src="assets/logo.png" alt="ミツクル" style="height: 40px; width: auto; display: block; margin-bottom: 20px;">
+          <p style="font-size: 14px; color: #6B7280; line-height: 1.9; margin: 0;">曖昧な要望から、最適なWeb制作パートナーを見つけるヒアリング型マッチングサービス。</p>
+        </div>
+
+        <div class="footer-links">
+          <div>
+            <div style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; color: #2B2B2B; margin-bottom: 18px;">サービス</div>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 13px;">
+              <li><a href="#" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">特長</a></li>
+              <li><a href="#" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">作れるもの</a></li>
+              <li><a href="#" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">選ばれる理由</a></li>
+              <li><a href="#" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">使い方の流れ</a></li>
+              <li><a href="cases.html" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">事例</a></li>
+              <li><a href="index.html#faq" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">よくある質問</a></li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; color: #2B2B2B; margin-bottom: 18px;">会社</div>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 13px;">
+              <li><a href="#" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">お問い合わせ</a></li>
+              <li><a href="#" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="border-top: 1px solid #F0F2EC; margin-top: 48px; padding-top: 28px; font-size: 12.5px; color: #9CA3AF;">© 2026 ミツクル</div>
+    </div>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マイページ｜ミツクル</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="new_styles.css">
+<style>
+.entry-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+@media (max-width: 760px) {
+    .entry-grid { grid-template-columns: 1fr; }
+    .footer-grid { flex-direction: column; gap: 40px; }
+    .footer-links { gap: 48px; }
+  }
+</style>
+</head>
+<body>
+<div style="font-family: 'Noto Sans JP', sans-serif; color: #2B2B2B; background: #ffffff; line-height: 1.8; -webkit-font-smoothing: antialiased;">
+
+  <!-- ============ HEADER（ログイン後）============ -->
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.88); backdrop-filter: blur(10px); border-bottom: 1px solid #E5E7EB;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; gap: 28px;">
+      <a href="index.html" style="display: flex; align-items: center; text-decoration: none; flex: none;">
+        <img src="assets/logo.png" alt="ミツクル — 見積りと制作依頼をワンストップで" style="height: 48px; width: auto; display: block;">
+      </a>
+      <nav class="gnav-desktop" style="display: flex; align-items: center; gap: 32px; font-size: 15px; font-weight: 500;">
+        <a href="about.html" style="color: #2B2B2B; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">ミツクルとは</a>
+        <a href="cases.html" style="color: #2B2B2B; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">事例</a>
+        <a href="partners.html" style="color: #2B2B2B; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">パートナー紹介</a>
+        <a href="videos.html" style="color: #2B2B2B; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">動画</a>
+        <a href="index.html#faq" style="color: #2B2B2B; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">よくある質問</a>
+      </nav>
+      <div class="gnav-actions" style="display: flex; align-items: center; gap: 18px; flex: none;">
+        <span style="display: inline-flex; align-items: center; gap: 9px; font-size: 14.5px; font-weight: 700; color: #2B2B2B;">
+          <span style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #8FC74F 0%, #689A38 100%); color: #ffffff; font-size: 13px; font-weight: 900; display: flex; align-items: center; justify-content: center;">山</span>
+          こんにちは、山田さん
+        </span>
+        <a href="login.html" style="font-size: 14px; font-weight: 600; color: #9CA3AF; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">ログアウト</a>
+      </div>
+      <button type="button" aria-label="メニューを開く" aria-expanded="false" class="gnav-burger" style="display: none; flex: none; width: 44px; height: 44px; align-items: center; justify-content: center; background: transparent; border: none; cursor: pointer; padding: 0;">
+        <span style="position: relative; display: block; width: 24px; height: 18px;">
+          <span style="position: absolute; left: 0; top: 0px; width: 24px; height: 2.5px; border-radius: 2px; background: #2B2B2B; transition: transform .25s ease, top .25s ease, opacity .2s ease; transform: rotate(0deg);"></span>
+          <span style="position: absolute; left: 0; top: 8px; width: 24px; height: 2.5px; border-radius: 2px; background: #2B2B2B; transition: opacity .2s ease; opacity: 1;"></span>
+          <span style="position: absolute; left: 0; top: 16px; width: 24px; height: 2.5px; border-radius: 2px; background: #2B2B2B; transition: transform .25s ease, top .25s ease; transform: rotate(0deg);"></span>
+        </span>
+      </button>
+    </div>
+    <div class="gnav-mobile" style="display: none; border-top: 1px solid #E5E7EB; background: #ffffff;">
+      <nav style="max-width: 1180px; margin: 0 auto; padding: 12px 24px 24px; display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center; gap: 10px; padding: 12px 6px 16px; font-size: 15px; font-weight: 700; color: #2B2B2B;">
+          <span style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #8FC74F 0%, #689A38 100%); color: #ffffff; font-size: 13px; font-weight: 900; display: flex; align-items: center; justify-content: center;">山</span>
+          こんにちは、山田さん
+        </div>
+        <a href="about.html" style="font-size: 16px; font-weight: 600; color: #2B2B2B; text-decoration: none; padding: 15px 6px; border-top: 1px solid #F0F2EC; transition: color .18s ease;" style-hover="color: #7CB342;">ミツクルとは</a>
+        <a href="cases.html" style="font-size: 16px; font-weight: 600; color: #2B2B2B; text-decoration: none; padding: 15px 6px; border-bottom: 1px solid #F0F2EC; transition: color .18s ease;" style-hover="color: #7CB342;">事例</a>
+        <a href="partners.html" style="font-size: 16px; font-weight: 600; color: #2B2B2B; text-decoration: none; padding: 15px 6px; border-bottom: 1px solid #F0F2EC; transition: color .18s ease;" style-hover="color: #7CB342;">パートナー紹介</a>
+        <a href="videos.html" style="font-size: 16px; font-weight: 600; color: #2B2B2B; text-decoration: none; padding: 15px 6px; border-bottom: 1px solid #F0F2EC; transition: color .18s ease;" style-hover="color: #7CB342;">動画</a>
+        <a href="index.html#faq" style="font-size: 16px; font-weight: 600; color: #2B2B2B; text-decoration: none; padding: 15px 6px; border-bottom: 1px solid #F0F2EC; transition: color .18s ease;" style-hover="color: #7CB342;">よくある質問</a>
+        <a href="login.html" style="font-size: 16px; font-weight: 600; color: #9CA3AF; text-decoration: none; padding: 15px 6px; transition: color .18s ease;" style-hover="color: #7CB342;">ログアウト</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ ウェルカム ============ -->
+  <section style="position: relative; overflow: hidden; background: #EFF6E4; border-bottom: 1px solid #E5E7EB;">
+    <div style="position: absolute; top: -90px; right: -50px; width: 280px; height: 280px; border-radius: 50%; background: rgba(124,179,66,0.10); pointer-events: none;"></div>
+    <div style="position: absolute; bottom: -90px; left: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1.5px solid rgba(124,179,66,0.16); pointer-events: none;"></div>
+    <div style="position: relative; z-index: 1; max-width: 1000px; margin: 0 auto; padding: 52px 32px 56px;">
+      <div style="font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; color: #5C8A2E; margin-bottom: 12px;">マイページ</div>
+      <h1 style="font-size: 32px; font-weight: 900; line-height: 1.4; margin: 0 0 10px;">こんにちは、山田さん</h1>
+      <p style="font-size: 16px; color: #6B7280; line-height: 1.9; margin: 0;">ご利用ありがとうございます。</p>
+    </div>
+  </section>
+
+  <!-- ============ 入口カード ============ -->
+  <section style="background: #ffffff;">
+    <div style="max-width: 1000px; margin: 0 auto; padding: 56px 32px 24px;">
+      <div class="entry-grid">
+
+        <!-- カード1：依頼者メニュー -->
+        <div style="display: flex; flex-direction: column; background: #ffffff; border-radius: 20px; padding: 36px 34px; box-shadow: 0 6px 24px rgba(0,0,0,0.07); transition: box-shadow .28s ease, transform .28s ease;" style-hover="box-shadow: 0 18px 40px rgba(124,179,66,0.20); transform: translateY(-5px);">
+          <div style="width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, #8FC74F 0%, #689A38 100%); box-shadow: 0 6px 16px rgba(104,154,56,0.30); display: flex; align-items: center; justify-content: center; margin-bottom: 22px;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3 H15 a1 1 0 0 1 1 1 v1 h2 a1 1 0 0 1 1 1 v14 a1 1 0 0 1 -1 1 H6 a1 1 0 0 1 -1 -1 V6 a1 1 0 0 1 1 -1 h2 V4 a1 1 0 0 1 1 -1 z"></path><path d="M9 13 l2 2 l4 -4"></path></svg>
+          </div>
+          <h2 style="font-size: 20px; font-weight: 900; margin: 0 0 12px;">依頼・提案を見る</h2>
+          <p style="font-size: 14.5px; color: #6B7280; line-height: 1.9; margin: 0 0 22px;">これまでのヒアリング内容と、ご提案内容を確認できます。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px;">
+            <span style="font-size: 12.5px; font-weight: 700; color: #5C8A2E; background: #EFF6E4; border-radius: 9999px; padding: 6px 14px;">進行中の依頼 2件</span>
+            <span style="font-size: 12.5px; font-weight: 700; color: #ffffff; background: #7CB342; border-radius: 9999px; padding: 6px 14px;">提案あり 1件</span>
+          </div>
+          <a href="#" style="margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 9px; background: #7CB342; color: #ffffff; font-size: 15px; font-weight: 800; text-decoration: none; padding: 14px 28px; border-radius: 9999px; box-shadow: 0 8px 20px rgba(124,179,66,0.30); transition: background .2s ease, transform .2s ease;" style-hover="background: #689A38; transform: translateY(-2px);">
+            依頼履歴を見る
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- カード2：パートナーメニュー -->
+        <div style="display: flex; flex-direction: column; background: #ffffff; border-radius: 20px; padding: 36px 34px; box-shadow: 0 6px 24px rgba(0,0,0,0.07); transition: box-shadow .28s ease, transform .28s ease;" style-hover="box-shadow: 0 18px 40px rgba(124,179,66,0.20); transform: translateY(-5px);">
+          <div style="width: 56px; height: 56px; border-radius: 16px; background: #EFF6E4; border: 1.5px solid #D5E5BC; display: flex; align-items: center; justify-content: center; margin-bottom: 22px;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5F9233" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19 a5.5 5.5 0 0 1 11 0"></path><circle cx="17.5" cy="9" r="2.4"></circle><path d="M16 14.4 a4.6 4.6 0 0 1 4.5 4.6"></path></svg>
+          </div>
+          <h2 style="font-size: 20px; font-weight: 900; margin: 0 0 12px;">パートナー情報を管理</h2>
+          <p style="font-size: 14.5px; color: #6B7280; line-height: 1.9; margin: 0 0 22px;">パートナーとしての登録内容を確認・編集できます。</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px;">
+            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 700; color: #5C8A2E; background: #EFF6E4; border-radius: 9999px; padding: 6px 14px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7CB342" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              登録ステータス 承認済み
+            </span>
+          </div>
+          <a href="partners.html" style="margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 9px; background: #ffffff; color: #5C8A2E; font-size: 15px; font-weight: 700; text-decoration: none; padding: 14px 28px; border-radius: 9999px; border: 2px solid #7CB342; transition: background .2s ease, transform .2s ease;" style-hover="background: #F4F8EC; transform: translateY(-2px);">
+            パートナー情報を見る
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 新しく始める ============ -->
+  <section style="background: #ffffff;">
+    <div style="max-width: 1000px; margin: 0 auto; padding: 24px 32px 80px;">
+      <div style="position: relative; overflow: hidden; background: linear-gradient(135deg, #7CB342 0%, #5F9233 100%); border-radius: 20px; padding: 44px 44px; box-shadow: 0 16px 40px rgba(104,154,56,0.30); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 28px;">
+        <div style="position: absolute; top: -60px; right: -30px; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.10); pointer-events: none;"></div>
+        <div style="position: relative; z-index: 1; max-width: 560px;">
+          <div style="font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; color: #EFF6E4; margin-bottom: 10px;">新しく始める</div>
+          <h2 style="font-size: 24px; font-weight: 900; color: #ffffff; line-height: 1.5; margin: 0 0 10px;">新しい依頼をはじめる</h2>
+          <p style="font-size: 15px; color: rgba(255,255,255,0.92); line-height: 1.9; margin: 0;">別の施策を相談したいときは、こちらから。</p>
+        </div>
+        <a href="hearing.html" style="position: relative; z-index: 1; flex: none; display: inline-flex; align-items: center; gap: 10px; background: #ffffff; color: #5C8A2E; font-size: 16px; font-weight: 800; text-decoration: none; padding: 17px 36px; border-radius: 9999px; box-shadow: 0 10px 26px rgba(0,0,0,0.16); transition: transform .2s ease, box-shadow .2s ease;" style-hover="transform: translateY(-3px); box-shadow: 0 16px 36px rgba(0,0,0,0.22);">
+          新しくヒアリングする
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER（継承）============ -->
+  <footer style="background: #ffffff; border-top: 1px solid #E5E7EB;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 72px 32px 40px;">
+      <div class="footer-grid">
+        <div style="max-width: 360px;">
+          <img src="assets/logo.png" alt="ミツクル" style="height: 40px; width: auto; display: block; margin-bottom: 20px;">
+          <p style="font-size: 14px; color: #6B7280; line-height: 1.9; margin: 0;">曖昧な要望から、最適なWeb制作パートナーを見つけるヒアリング型マッチングサービス。</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <div style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; color: #2B2B2B; margin-bottom: 18px;">サービス</div>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 13px;">
+              <li><a href="about.html" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">ミツクルとは</a></li>
+              <li><a href="cases.html" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">事例</a></li>
+              <li><a href="partners.html" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">パートナー紹介</a></li>
+              <li><a href="videos.html" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">動画</a></li>
+              <li><a href="index.html#faq" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">よくある質問</a></li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; color: #2B2B2B; margin-bottom: 18px;">会社</div>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 13px;">
+              <li><a href="#" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">お問い合わせ</a></li>
+              <li><a href="#" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid #F0F2EC; margin-top: 48px; padding-top: 28px; font-size: 12.5px; color: #9CA3AF;">© 2026 ミツクル</div>
+    </div>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
