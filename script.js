@@ -78,3 +78,43 @@
     targets.forEach(function (el) { obs.observe(el); });
   })();
 })();
+
+/* ============ 下層ページ共通：gnav ハンバーガー＆style-hover ============ */
+(function () {
+  'use strict';
+
+  /* gnav ハンバーガー開閉（モバイル） */
+  var burger = document.querySelector('.gnav-burger');
+  var panel = document.querySelector('.gnav-mobile');
+  if (burger && panel) {
+    function setOpen(open) {
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.classList.toggle('is-open', open);
+    }
+    burger.addEventListener('click', function () {
+      setOpen(burger.getAttribute('aria-expanded') !== 'true');
+    });
+    panel.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setOpen(false);
+    });
+    window.matchMedia('(min-width: 1025px)').addEventListener('change', function (e) {
+      if (e.matches) setOpen(false);
+    });
+  }
+
+  /* style-hover 属性 → ホバー時にインラインスタイルを合成（dc-runtime の挙動を再現） */
+  var hoverEls = document.querySelectorAll('[style-hover]');
+  hoverEls.forEach(function (el) {
+    var hover = el.getAttribute('style-hover');
+    if (!hover) return;
+    var base = el.getAttribute('style') || '';
+    var joined = base && !/;\s*$/.test(base) ? base + '; ' + hover : base + hover;
+    el.addEventListener('mouseenter', function () { el.setAttribute('style', joined); });
+    el.addEventListener('mouseleave', function () { el.setAttribute('style', base); });
+    el.addEventListener('focus', function () { el.setAttribute('style', joined); }, true);
+    el.addEventListener('blur', function () { el.setAttribute('style', base); }, true);
+  });
+})();

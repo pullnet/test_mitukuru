@@ -54,6 +54,14 @@
 - 事例・画像を実データに差し替え（`assets/` のグラデーション枠を実画像へ）。
 - 実装スタック（React/Next.js・WordPress等）に合わせたコンポーネント化（`index.html` のセクション＝コンポーネント単位で分割可）。
 
+### 下層ページ（12枚・ハンドオフバンドルの各 .dc.html を静的化）
+公式バンドルの各 `.dc.html`（dc-runtime／support.js 依存）を、**support.js に依存しないクリーンな静的HTML**へ変換して配置（インラインスタイルは忠実に保持し、dc-runtime の足場＝`<x-dc>`/`<helmet>`/`data-dc-script`/`{{ }}`/`data-screen-label` を除去。`{{ }}` は各 `renderVals()` の初期状態値で確定）。
+- ページ：`about` / `cases` / `partners` / `partner-detail` / `partner-join` / `videos` / `hearing` / `template` / `mypage` / `login` / `request-detail` / `request-history`。
+- 共通サイトナビ（gnav ヘッダー／フッター）を全13ページで統一。内部リンク(href)は英語ファイル名に統一（`ログイン→login` `無料で始める→hearing` `よくある(ご)質問→index.html#faq` `事例→cases` `パートナー紹介→partners` `動画→videos` `詳細を見る→request-detail` 等）。リンク切れ無し（検証済み）。
+- 共通CSS（gnav 表示切替・フッター整列・`.ff-input`・ハンバーガー開閉状態）は `styles.css` に集約。ハンバーガー開閉と `style-hover`（ホバー時のインラインスタイル合成）は `script.js` で実装。
+- 動的UI（cases/videos のタブ絞り込み、hearing のカテゴリ切替、partner-detail の閲覧/編集、request-detail の回答アコーディオン）は各 `renderVals()` の初期状態を静的に再現（クリックでの再フィルタは非対応＝静的化方針）。
+- トップ `index.html` のヘッダー／フッターも gnav 共通版へ統一（本文セクションは従来通り）。
+
 ### 完了済み
 - `index.html`＋`styles.css`＋`script.js`＋`assets/` で本実装（セマンティック・モバイルファースト・BP 768/1024）。デザインシステムを `.claude/skills/mitsukuru-design/` に整備。
 - ロゴを自社ホスティング化（`assets/logo.svg` のワードマーク。元サイト/参照サイトは環境のネットワークポリシーで取得不可のため自作）。

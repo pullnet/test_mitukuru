@@ -34,24 +34,40 @@
 </svg>
 
 <!-- ============ ヘッダー ============ -->
-<header class="site-header" id="top">
-  <div class="container site-header__inner">
-    <a href="#top" class="logo" aria-label="ミツクル ホーム"><img src="assets/logo.png" alt="ミツクル" width="235" height="44"></a>
-    <nav class="nav" id="primary-nav" aria-label="メインナビゲーション">
-      <ul class="nav__list">
-        <li><a href="#make">作れるもの</a></li>
-        <li><a href="#why">選ばれる理由</a></li>
-        <li><a href="#how">使い方</a></li>
-        <li><a href="#works">事例</a></li>
-        <li><a href="#faq">よくある質問</a></li>
-        <li class="nav__sp"><a href="#cta">お問い合わせ</a></li>
-        <li><a class="btn btn--primary btn--sm nav__cta" href="#cta">無料で始める</a></li>
-      </ul>
+<header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.88); backdrop-filter: blur(10px); border-bottom: 1px solid #E5E7EB;">
+  <div style="max-width: 1180px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; gap: 28px;">
+    <a href="index.html" style="display: flex; align-items: center; text-decoration: none; flex: none;">
+      <img src="assets/logo.png" alt="ミツクル — 見積りと制作依頼をワンストップで" style="height: 48px; width: auto; display: block;">
+    </a>
+    <nav class="gnav-desktop" style="display: flex; align-items: center; gap: 32px; font-size: 15px; font-weight: 500;">
+      <a href="about.html" style="color: #2B2B2B; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">ミツクルとは</a>
+      <a href="cases.html" style="color: #5F9233; text-decoration: none; font-weight: 700;">事例</a>
+      <a href="partners.html" style="color: #2B2B2B; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">パートナー紹介</a>
+      <a href="videos.html" style="color: #2B2B2B; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">動画</a>
+      <a href="index.html#faq" style="color: #2B2B2B; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">よくある質問</a>
     </nav>
-    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="primary-nav">
-      <svg class="icon nav-toggle__open" aria-hidden="true"><use href="#i-menu"/></svg>
-      <svg class="icon nav-toggle__close" aria-hidden="true"><use href="#i-close"/></svg>
+    <div class="gnav-actions" style="display: flex; align-items: center; gap: 20px; flex: none;">
+      <a href="login.html" style="font-size: 14.5px; font-weight: 500; color: #9CA3AF; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">ログイン</a>
+      <a href="hearing.html" style="font-size: 15px; font-weight: 700; color: #ffffff; background: #7CB342; padding: 12px 26px; border-radius: 9999px; text-decoration: none; box-shadow: 0 4px 14px rgba(124,179,66,0.35); transition: background .18s ease;" style-hover="background: #689A38;">無料で始める</a>
+    </div>
+    <button type="button" aria-label="メニューを開く" aria-expanded="false" class="gnav-burger" style="display: none; flex: none; width: 44px; height: 44px; align-items: center; justify-content: center; background: transparent; border: none; cursor: pointer; padding: 0;">
+      <span style="position: relative; display: block; width: 24px; height: 18px;">
+        <span style="position: absolute; left: 0; top: 0px; width: 24px; height: 2.5px; border-radius: 2px; background: #2B2B2B; transition: transform .25s ease, top .25s ease, opacity .2s ease; transform: rotate(0deg);"></span>
+        <span style="position: absolute; left: 0; top: 8px; width: 24px; height: 2.5px; border-radius: 2px; background: #2B2B2B; transition: opacity .2s ease; opacity: 1;"></span>
+        <span style="position: absolute; left: 0; top: 16px; width: 24px; height: 2.5px; border-radius: 2px; background: #2B2B2B; transition: transform .25s ease, top .25s ease; transform: rotate(0deg);"></span>
+      </span>
     </button>
+  </div>
+  <div class="gnav-mobile" style="display: none; border-top: 1px solid #E5E7EB; background: #ffffff;">
+    <nav style="max-width: 1180px; margin: 0 auto; padding: 12px 24px 24px; display: flex; flex-direction: column;">
+      <a href="about.html" style="font-size: 16px; font-weight: 600; color: #2B2B2B; text-decoration: none; padding: 15px 6px; border-bottom: 1px solid #F0F2EC; transition: color .18s ease;" style-hover="color: #7CB342;">ミツクルとは</a>
+      <a href="cases.html" style="font-size: 16px; font-weight: 700; color: #5F9233; text-decoration: none; padding: 15px 6px; border-bottom: 1px solid #F0F2EC;">事例</a>
+      <a href="partners.html" style="font-size: 16px; font-weight: 600; color: #2B2B2B; text-decoration: none; padding: 15px 6px; border-bottom: 1px solid #F0F2EC; transition: color .18s ease;" style-hover="color: #7CB342;">パートナー紹介</a>
+      <a href="videos.html" style="font-size: 16px; font-weight: 600; color: #2B2B2B; text-decoration: none; padding: 15px 6px; border-bottom: 1px solid #F0F2EC; transition: color .18s ease;" style-hover="color: #7CB342;">動画</a>
+      <a href="index.html#faq" style="font-size: 16px; font-weight: 600; color: #2B2B2B; text-decoration: none; padding: 15px 6px; border-bottom: 1px solid #F0F2EC; transition: color .18s ease;" style-hover="color: #7CB342;">よくある質問</a>
+      <a href="login.html" style="font-size: 16px; font-weight: 500; color: #9CA3AF; text-decoration: none; padding: 15px 6px; transition: color .18s ease;" style-hover="color: #7CB342;">ログイン</a>
+      <a href="hearing.html" style="margin-top: 14px; text-align: center; font-size: 16px; font-weight: 700; color: #ffffff; background: #7CB342; padding: 15px 26px; border-radius: 9999px; text-decoration: none; box-shadow: 0 4px 14px rgba(124,179,66,0.35);" style-hover="background: #689A38;">無料で始める</a>
+    </nav>
   </div>
 </header>
 
@@ -327,34 +343,35 @@
 </main>
 
 <!-- ============ フッター ============ -->
-<footer class="site-footer">
-  <div class="container site-footer__inner">
-    <div class="site-footer__brand">
-      <img src="assets/logo.png" alt="ミツクル" width="214" height="40">
-      <p class="site-footer__tagline">曖昧な要望から、最適なWeb制作パートナーを見つけるヒアリング型マッチングサービス。</p>
+<footer style="background: #ffffff; border-top: 1px solid #E5E7EB;">
+  <div style="max-width: 1180px; margin: 0 auto; padding: 72px 32px 40px;">
+    <div class="footer-grid">
+      <div style="max-width: 360px;">
+        <img src="assets/logo.png" alt="ミツクル" style="height: 40px; width: auto; display: block; margin-bottom: 20px;">
+        <p style="font-size: 14px; color: #6B7280; line-height: 1.9; margin: 0;">曖昧な要望から、最適なWeb制作パートナーを見つけるヒアリング型マッチングサービス。</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <div style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; color: #2B2B2B; margin-bottom: 18px;">サービス</div>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 13px;">
+            <li><a href="about.html" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">ミツクルとは</a></li>
+            <li><a href="cases.html" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">事例</a></li>
+            <li><a href="partners.html" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">パートナー紹介</a></li>
+            <li><a href="videos.html" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">動画</a></li>
+            <li><a href="index.html#faq" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">よくある質問</a></li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; color: #2B2B2B; margin-bottom: 18px;">会社</div>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 13px;">
+            <li><a href="#" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">お問い合わせ</a></li>
+            <li><a href="#" style="font-size: 14px; color: #6B7280; text-decoration: none; transition: color .18s ease;" style-hover="color: #7CB342;">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <nav class="site-footer__links" aria-label="フッターナビゲーション">
-      <div class="foot-col">
-        <h2 class="foot-col__h">サービス</h2>
-        <ul>
-          <li><a href="#why">特長</a></li>
-          <li><a href="#make">作れるもの</a></li>
-          <li><a href="#why">選ばれる理由</a></li>
-          <li><a href="#how">使い方の流れ</a></li>
-          <li><a href="#works">事例</a></li>
-          <li><a href="#faq">よくある質問</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h2 class="foot-col__h">会社</h2>
-        <ul>
-          <li><a href="#cta">お問い合わせ</a></li>
-          <li><a href="#">プライバシーポリシー</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div style="border-top: 1px solid #F0F2EC; margin-top: 48px; padding-top: 28px; font-size: 12.5px; color: #9CA3AF;">© 2026 ミツクル</div>
   </div>
-  <div class="container"><p class="copy">&copy; 2026 ミツクル</p></div>
 </footer>
 
 <script src="script.js"></script>

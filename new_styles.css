@@ -323,3 +323,35 @@ ul,ol{ list-style:none; }
   .final-cta__title,.post_content h2.final-cta__title{ font-size:38px; }
   .final-cta__lead{ font-size:17px; }
 }
+
+/* ======================================================================
+   共通サイトナビ（gnav）— 下層ページ＆トップ共通のヘッダー／フッター。
+   各ページのマークアップ自体はインラインスタイルを保持し、ここでは
+   レスポンシブの表示切替・フッターの整列・フォーム入力・ハンバーガー
+   開閉状態（JSで aria-expanded / .is-open を切替）だけを担う。
+   ====================================================================== */
+.footer-grid { display: flex; justify-content: space-between; gap: 56px; }
+.footer-links { display: flex; gap: 72px; }
+.gnav-desktop a, .gnav-actions a { white-space: nowrap; }
+
+.ff-input { width: 100%; font-family: inherit; font-size: 15px; color: #2B2B2B; background: #ffffff; border: 1.5px solid #DCE5D0; border-radius: 8px; padding: 13px 15px; outline: none; transition: border-color .15s ease, box-shadow .15s ease; }
+.ff-input::placeholder { color: #AEB6A4; }
+.ff-input:focus { border-color: #7CB342; box-shadow: 0 0 0 3px rgba(124,179,66,0.20); }
+
+@media (max-width: 1024px) {
+  .gnav-desktop, .gnav-actions { display: none !important; }
+  .gnav-burger { display: flex !important; }
+}
+@media (min-width: 1025px) {
+  .gnav-mobile { display: none !important; }
+}
+@media (max-width: 760px) {
+  .footer-grid { flex-direction: column; gap: 40px; }
+  .footer-links { gap: 48px; }
+}
+
+/* ハンバーガー開閉（JS が .gnav-burger の aria-expanded と .gnav-mobile.is-open を切替） */
+.gnav-mobile.is-open { display: block !important; }
+.gnav-burger[aria-expanded="true"] span span:nth-child(1) { top: 8px !important; transform: rotate(45deg) !important; }
+.gnav-burger[aria-expanded="true"] span span:nth-child(2) { opacity: 0 !important; }
+.gnav-burger[aria-expanded="true"] span span:nth-child(3) { top: 8px !important; transform: rotate(-45deg) !important; }
