@@ -385,8 +385,10 @@ ul,ol{ list-style:none; }
   /* 6) ヒーローh1をSPで1px小さく（PC/タブレットは据え置き） */
   .hero__title{ font-size:29px; }
 
-  /* 7) 「ミツクルなら」のキャッチをSPで少し小さく（意図しない改行を防止） */
-  .bridge__lead{ font-size:20px; }
+  /* 7/A) 「ミツクルなら」のキャッチをSPで小さく＋余白を詰め、各行を1行に収める
+     （既存の<br>で「を」の後ろを改行。PCは現状の2行を維持） */
+  .bridge{ padding:30px 22px; }
+  .bridge__lead{ font-size:16px; line-height:1.7; }
 
   /* 9) SPの縦長を圧縮：セクション余白・見出し下・ヒーロー・画像枠を詰める */
   .section{ padding:44px 0; }
