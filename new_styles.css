@@ -412,3 +412,18 @@ ul,ol{ list-style:none; }
   .make-card__head{ flex-direction:column; align-items:flex-start; gap:10px; padding-bottom:10px; }
   .make-card__head h3{ word-break:auto-phrase; overflow-wrap:anywhere; }
 }
+
+/* =========================================================
+   10) SP（768px以下）：ご利用の流れを 2×2 の田の字グリッドに
+   （矢印は非表示。番号 STEP 01〜04 で順序が分かる。PC/タブレットは横並び＋矢印を維持）
+   ========================================================= */
+@media (max-width:767.98px){
+  .flow,.post_content .flow{ display:grid; grid-template-columns:1fr 1fr; gap:14px; max-width:none; align-items:stretch; }
+  .flow .step{ width:auto; }
+  .flow__arrow{ display:none; }
+  /* 2列幅でも崩れないよう余白・文字サイズを調整 */
+  .step__head{ padding:16px 14px 10px; }
+  .step__no{ font-size:11px; letter-spacing:.08em; margin-bottom:6px; }
+  .step__head h3{ font-size:14.5px; line-height:1.45; word-break:auto-phrase; overflow-wrap:anywhere; }
+  .step p{ padding:12px 14px 18px; font-size:12.5px; line-height:1.8; }
+}
