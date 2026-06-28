@@ -108,7 +108,7 @@ ul,ol{ list-style:none; }
 .hero__inner{ display:grid; gap:28px; align-items:center; }
 .badge{ display:inline-flex; align-items:center; gap:8px; background:var(--green-100); color:var(--green-deeper); font-size:13px; font-weight:700; padding:8px 16px; border-radius:9999px; margin-bottom:22px; }
 .badge__dot{ width:7px; height:7px; border-radius:50%; background:var(--green); }
-.hero__title{ font-size:30px; font-weight:900; line-height:1.45; letter-spacing:.005em; margin:0 0 22px; word-break:keep-all; }
+.hero__title{ font-size:30px; font-weight:900; line-height:1.45; letter-spacing:.005em; margin:0 0 22px; word-break:auto-phrase; overflow-wrap:anywhere; }
 .hero__title .hl{ color:var(--green); }
 .hero__lead{ font-size:16px; color:var(--muted); line-height:1.9; margin:0 0 30px; max-width:480px; }
 .ticks{ display:flex; flex-wrap:wrap; gap:20px; margin-top:28px; color:var(--muted); font-size:13px; font-weight:500; }
@@ -117,6 +117,20 @@ ul,ol{ list-style:none; }
 .hero__figure{ margin:0; }
 .hero__figure img{ width:100%; height:auto; }
 .btn-row .btn{ flex:1 1 100%; }
+
+/* スマホ（768px以下）はヒーロー内の表示順を h1 → 画像 → 説明文 → CTA に並び替え。
+   HTMLの並び順は変えず、hero__text を display:contents で展開し order で制御。
+   PC（≥1024）の左テキスト＋右画像の2カラムには影響しない。 */
+@media (max-width:767.98px){
+  .hero__inner{ display:flex; flex-direction:column; align-items:stretch; gap:24px; }
+  .hero__text{ display:contents; }
+  .hero__text .badge{ order:1; align-self:flex-start; margin-bottom:0; }
+  .hero__title{ order:2; margin:0; }
+  .hero__figure{ order:3; }
+  .hero__lead{ order:4; margin:0; max-width:none; }
+  .hero__text .btn-row{ order:5; }
+  .hero__text .ticks{ order:6; margin-top:0; }
+}
 
 /* =========================================================
    お悩み / 価値バナー
@@ -306,11 +320,14 @@ ul,ol{ list-style:none; }
   .section{ padding:92px 0; }
   .section__title,.post_content h2.section__title{ font-size:34px; }
 
-  /* hero：テキスト左＋イラスト右 */
-  .hero{ padding:44px 0 52px; }
-  .hero__inner{ grid-template-columns:0.92fr 1.15fr; gap:48px; }
+  /* hero：テキスト左＋イラスト右（画像を大きく・上下の余白を圧縮） */
+  .hero{ padding:24px 0 32px; }
+  .hero__inner{ grid-template-columns:minmax(0,620px) minmax(0,1fr); gap:40px; align-items:stretch; }
+  .hero__text{ align-self:center; }
   .hero__title{ font-size:40px; }
   .hero__lead{ font-size:17px; }
+  .hero__figure{ align-self:stretch; display:flex; align-items:center; justify-content:center; }
+  .hero__figure img{ width:100%; height:auto; max-height:100%; object-fit:contain; display:block; }
 
   /* 使い方：横並び＋右向き矢印 */
   .flow,.post_content .flow{ flex-direction:row; align-items:stretch; max-width:none; }
