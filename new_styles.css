@@ -386,9 +386,12 @@ ul,ol{ list-style:none; }
   .hero__title{ font-size:29px; }
 
   /* 7/A) 「ミツクルなら」のキャッチをSPで小さく＋余白を詰め、各行を1行に収める
-     （既存の<br>で「を」の後ろを改行。PCは現状の2行を維持） */
-  .bridge{ padding:30px 22px; }
-  .bridge__lead{ font-size:16px; line-height:1.7; }
+     （既存の<br>で「を」の後ろを改行。PCは現状の2行を維持）
+     見出し・ボタンともフォントを下げ、320px幅でも各行が折り返さないようにする */
+  .bridge{ padding:26px 20px; gap:18px; }
+  .bridge__label{ font-size:13px; margin-bottom:8px; }
+  .bridge__lead{ font-size:14px; line-height:1.65; }
+  .bridge .btn{ font-size:14px; padding:13px 24px; }
 
   /* 9) SPの縦長を圧縮：セクション余白・見出し下・ヒーロー・画像枠を詰める */
   .section{ padding:44px 0; }
@@ -428,4 +431,26 @@ ul,ol{ list-style:none; }
   .step__no{ font-size:11px; letter-spacing:.08em; margin-bottom:6px; }
   .step__head h3{ font-size:14.5px; line-height:1.45; word-break:auto-phrase; overflow-wrap:anywhere; }
   .step p{ padding:12px 14px 18px; font-size:12.5px; line-height:1.8; }
+}
+
+/* =========================================================
+   11) 下層ページ共通：ページヘッダー（緑背景のタイトル帯）の高さを詰める
+   - 対象は index 以外の全下層ページ（.page-head を付与）
+   - PC は上下paddingと内部marginを 2〜3割カット
+   - SP（768px以下）は約半分の高さまで圧縮し、h1 も少し小さく
+   - 文言・色は変更せず、縦の余白（高さ）だけ調整
+   - インラインstyle を上書きするため !important を使用
+   ========================================================= */
+.page-head{ padding-top:40px !important; padding-bottom:42px !important; }
+.page-head > nav{ margin-bottom:14px !important; }      /* パンくず */
+.page-head > nav + div{ margin-bottom:12px !important; } /* ラベル（バッジ）*/
+.page-head > div:first-child{ margin-bottom:9px !important; } /* ラベル（mypage 等、navなし）*/
+.page-head h1{ margin-bottom:11px !important; }
+
+@media (max-width:767.98px){
+  .page-head{ padding-top:22px !important; padding-bottom:24px !important; }
+  .page-head > nav{ margin-bottom:10px !important; }
+  .page-head > nav + div{ margin-bottom:9px !important; }
+  .page-head > div:first-child{ margin-bottom:7px !important; }
+  .page-head h1{ font-size:26px !important; line-height:1.4 !important; margin-bottom:8px !important; }
 }
