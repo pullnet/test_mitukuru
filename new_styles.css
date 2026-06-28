@@ -40,6 +40,7 @@ ul,ol{ list-style:none; }
 
 /* ---- layout ---- */
 .container{ max-width:var(--maxw); margin:0 auto; padding:0 20px; }
+.sp-only{ display:none; }
 .container--narrow{ max-width:720px; }
 .section{ padding:64px 0; }
 .section#works{margin:0;}
@@ -372,3 +373,42 @@ ul,ol{ list-style:none; }
 .gnav-burger[aria-expanded="true"] span span:nth-child(1) { top: 8px !important; transform: rotate(45deg) !important; }
 .gnav-burger[aria-expanded="true"] span span:nth-child(2) { opacity: 0 !important; }
 .gnav-burger[aria-expanded="true"] span span:nth-child(3) { top: 8px !important; transform: rotate(-45deg) !important; }
+
+/* =========================================================
+   SP（768px以下）追加調整：見出し縮小・横スワイプ・縦長の圧縮
+   （※ ベース定義より後に置き、SPで確実に上書きする）
+   ========================================================= */
+@media (max-width:767.98px){
+  /* 4) 「作れるもの」h2 を「作りたいものは、」で改行（SPのみ） */
+  br.sp-only{ display:inline; }
+
+  /* 6) ヒーローh1をSPで1px小さく（PC/タブレットは据え置き） */
+  .hero__title{ font-size:29px; }
+
+  /* 7) 「ミツクルなら」のキャッチをSPで少し小さく（意図しない改行を防止） */
+  .bridge__lead{ font-size:20px; }
+
+  /* 9) SPの縦長を圧縮：セクション余白・見出し下・ヒーロー・画像枠を詰める */
+  .section{ padding:44px 0; }
+  .section__head{ margin-bottom:28px; }
+  .hero{ padding:20px 0 28px; }
+  .hero__figure img{ width:auto; max-width:100%; max-height:248px; margin:0 auto; display:block; }
+  .pain-card__thumb,.why-card__thumb{ aspect-ratio:16/10; }
+  .pain-card__thumb{ margin-bottom:16px; }
+  .pain-grid,.why-grid{ gap:18px; }
+
+  /* 8) 「作れるもの」をSPのみ横スワイプ（カルーセル）。PC/タブレットはグリッド維持 */
+  .make-grid,.post_content .make-grid{
+    display:flex; grid-template-columns:none; gap:14px;
+    overflow-x:auto; -webkit-overflow-scrolling:touch;
+    scroll-snap-type:x mandatory;
+    margin:0 -20px; padding:4px 20px 14px;
+    scrollbar-width:none;
+  }
+  .make-grid::-webkit-scrollbar{ display:none; }
+  .make-card{ flex:0 0 48%; scroll-snap-align:start; }
+  /* 狭いカード幅でもタイトルが切れないよう、見出しを縦積み＋折返し可に */
+  .make-card__body{ padding:18px 18px 22px; }
+  .make-card__head{ flex-direction:column; align-items:flex-start; gap:10px; padding-bottom:10px; }
+  .make-card__head h3{ word-break:auto-phrase; overflow-wrap:anywhere; }
+}
