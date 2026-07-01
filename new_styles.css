@@ -59,7 +59,7 @@ ul,ol{ list-style:none; }
 .btn--lg{ padding:16px 36px; font-size:16px; }
 .btn--xl{ padding:19px 42px; font-size:17px; font-weight:800; }
 .btn--primary{ background:var(--green); color:#fff; box-shadow:0 8px 22px rgba(124,179,66,.35); }
-.btn--primary:hover{ background:var(--green-dark); transform:translateY(-2px); }
+.btn--primary:hover{ background:var(--green-dark); color:#fff; transform:translateY(-2px); }
 .btn--grad{ background:linear-gradient(135deg, var(--green) 0%, var(--green-deep) 100%); box-shadow:0 10px 26px rgba(124,179,66,.36); }
 .btn--grad:hover{ transform:translateY(-3px); box-shadow:0 16px 32px rgba(124,179,66,.42); }
 .btn--ghost{ background:#fff; color:var(--ink); border:1.5px solid var(--line); box-shadow:none; }

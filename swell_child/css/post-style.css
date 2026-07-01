@@ -1,0 +1,687 @@
+/* 投稿ページのカスタマイズ（post-style.css） */
+
+/*
+    SWELLテーマの投稿ページのCSSを追加します。(ver.1.0.1)
+*/
+
+/* 
+ * ==============================
+ * 投稿ページの装飾
+ * ==============================
+ */
+
+/* 投稿ページの背景 */
+article.l-mainContent__inner {
+    background-color: #fff;
+    padding: 0px 0px;
+}
+
+@media (max-width: 800px) {
+    article.l-mainContent__inner {
+        padding: 0px 10px;  
+    }
+}
+
+/* 投稿ページの上スペース */
+article.l-mainContent.l-article {
+    padding-top: 25px;
+}
+
+@media (max-width: 800px) {
+    article.l-mainContent__inner {
+        padding-top: 5px;
+    }
+}
+
+/* 投稿ページのタイトル */
+.c-postTitle__ttl {
+    font-size: 2.0rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .c-postTitle__ttl {
+        margin-top: 25px !important;
+        font-size: 20px;
+    }
+}
+
+/* 投稿ページのカテゴリー下の隙間 */
+.p-articleMetas {
+    margin-bottom: 15px;
+}
+
+/* パンくずリスト、更新日などの色を薄くする */
+.p-articleMetas,
+.p-breadcrumb,
+.p-postList__times {
+    color: #999999;
+    font-size: 0.8em;
+}
+
+/* アイキャッチの大きさを変更する */
+.p-articleThumb {
+    width: 80%;
+    margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+    .p-articleThumb {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* 
+ * ==============================
+ * カスタム投稿タイプのカテゴリーのカスタマイズ
+ * ==============================
+ */
+
+/* 投稿ページのカテゴリーの前のアイコン非表示 */
+.c-categoryList:before {
+    display: none;
+}
+
+/* 投稿ページの上部のカテゴリー */
+.p-articleMetas__termList.c-categoryList > a.c-categoryList__link {
+    font-size: 15px;
+    line-height: 1.5em;
+    display: inline-block;
+    word-break: break-word;
+    padding: 6px 8px;
+    margin-top: 5px;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid var(--color_main);
+    color: var(--color_main);
+    background: #fff;
+}
+
+/* 投稿ページの上部のカテゴリー(ホバー時) */
+.p-articleMetas__termList.c-categoryList > a.c-categoryList__link:hover {
+    border: 1px solid var(--color_main);
+    color: #fff;
+    background: var(--color_main);
+}
+
+/* 投稿ページの下部のカテゴリー */
+.p-articleMetas__termList.c-categoryList > .c-categoryList__link {
+    font-size: 12px;
+    line-height: 1.5em;
+    display: inline-block;
+    word-break: break-word;
+    padding: 6px 8px;
+    margin-top: 5px;
+    border-radius: 15px;
+    text-decoration: none;
+    background: var(--color_main);
+    color: #fff;
+    border: 1px solid var(--color_main);
+}
+
+/* 投稿ページの下部のカテゴリー（ホバー時） */
+.p-articleMetas__termList.c-categoryList > .c-categoryList__link:hover {
+    background: var(--color_main);
+    color: #fff;
+    border: 1px solid var(--color_main);
+}
+
+/* 
+ * ==============================
+ * 投稿ページのタグのカスタマイズ
+ * ==============================
+ */
+
+/* 投稿ページのタグ前のアイコン非表示 */
+.c-tagList:before {
+    display: none;
+}
+
+/* 投稿ページの上部のタグ */
+.p-articleMetas__termList.c-tagList > .c-tagList__link {
+    font-size: 13px;
+    line-height: 1.5em;
+    display: inline-block;
+    word-break: break-word;
+    padding: 6px 8px;
+    margin-top: 5px;
+    border-radius: 15px;
+    text-decoration: none;
+    background: var(--color_main);
+    color: #fff;
+    border: 1px solid var(--color_main);
+}
+
+/* 投稿ページの上部のタグ（ホバー時） */
+.p-articleMetas__termList.c-tagList > .c-tagList__link:hover {
+    background: #fff;
+    color: var(--color_main);
+    border: 1px solid var(--color_main);
+}
+
+/* 投稿ページの下部のタグ */
+.p-articleMetas__termList.c-tagList > .c-tagList__link {
+    font-size: 11px;
+    line-height: 1.5em;
+    display: inline-block;
+    word-break: break-word;
+    padding: 6px 8px;
+    margin-top: 5px;
+    border-radius: 15px;
+    text-decoration: none;
+    border: 1px solid var(--color_main);
+    color: var(--color_main);
+    background: #fff;
+}
+
+/* 投稿ページの下部のタグ（ホバー時） */
+.p-articleMetas__termList.c-tagList > .c-tagList__link:hover {
+    border: 1px solid var(--color_main);
+    color: #fff;
+    background: var(--color_main);
+}
+
+/* 
+ * ==============================
+ * カスタム投稿タイプのカテゴリーのカスタマイズ
+ * ==============================
+ */
+
+/* カスタム投稿タイプのカテゴリー、タグの前のアイコン非表示 */
+.c-taxList:before {
+    display: none;
+}
+
+/* カスタム投稿タイプのカテゴリー */
+.p-articleMetas__termList.c-taxList > .c-taxList__link {
+    font-size: 13px;
+    line-height: 1.5em;
+    display: inline-block;
+    word-break: break-word;
+    padding: 6px 8px;
+    margin-top: 5px;
+    border-radius: 15px;
+    text-decoration: none;
+    background: #fff;
+    color: var(--color_deep01);
+    border: 1px solid var(--color_deep01);
+}
+
+/* カスタム投稿タイプのカテゴリーのホバー時 */
+.p-articleMetas__termList > .c-taxList:hover {
+    color: #fff;
+    background-color: var(--color_deep01);
+    border: 1px solid #fff;
+}
+
+/* 
+ * ==============================
+ * カスタム投稿タイプのタグのカスタマイズ
+ * ==============================
+ */
+
+/* カスタム投稿タイプ内のタグ */
+.p-articleMetas__termList.c-tagList > .c-tagList__link {
+    color: #fff;
+}
+
+/* カスタム投稿タイプ内のタグ　ホバー時 */
+.p-articleMetas__termList.c-tagList > .c-tagList__link:hover {
+    color: var(--color_main);
+}
+
+/* 
+ * ==============================
+ * 投稿リストボックスのカスタマイズ（カード型）
+ * ==============================
+ */
+
+/* 投稿リストの幅のサイズ調整、センター位置 */
+div.p-postListWrap {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/* 投稿リストボックスの基本設定 */
+.-type-card .p-postList__item {
+    background: #fff;
+    border: 0.1px solid #e8e8e8;
+    transition: all ease 0.3s;
+    box-sizing: border-box;
+}
+
+/* 投稿リストのボックスデザイン */
+.-type-card .p-postList__item {
+    margin: 0px 0px;
+    float: left;
+}
+
+/* リスト間のマージン設定 */
+/* リスト間のマージン（PC1列） */
+.-type-card.-pc-col1 {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* リスト間のマージン（PC2列） */
+.-type-card.-pc-col2 .p-postList__item {
+    margin: 5px;
+    float: left;
+    width: calc(50% - 10px)!important;
+}
+
+/* リスト間のマージン（PC3列） */
+/* 3列の時 */
+.-type-card.-pc-col3 .p-postList__item {
+    margin: 5px;
+    width: calc(33.3333% - 20px)!important;
+    float: left;
+}
+
+@media (max-width: 800px) {
+    /* リスト間のマージン（スマホ2列） */
+    .-type-card.-sp-col2 .p-postList__item {
+        margin: 5px;
+        width: calc(50% - 10px)!important;
+    }
+
+    /* リスト間のマージン（スマホ1列） */
+    .-type-card.-sp-col1 .p-postList__item {
+        width: calc(100% - 10px)!important;
+        margin: 5px;
+    }
+}
+
+/* 投稿リストのタイトル */
+.p-postList__title {
+    margin: 1px 0px 5px 2px!important;
+    font-size: 1em!important;
+}
+
+@media (max-width: 800px) {
+    .p-postList__title {
+        margin: 1px 0px 5px 2px!important;
+        font-size: 15px!important;
+    }
+}
+
+/* 投稿リストボックスのテキスト位置 */
+.-type-card .p-postList__body {
+    padding: 5px 5px 10px 5px;
+}
+
+/* 投稿リストボックスの画像 */
+.-type-card .p-postList__thumb {
+    margin-top: 8px;
+}
+
+/* 投稿リストボックスのカテゴリーの背景 */
+.c-postThumb__cat {
+    color: #fff;
+    background-color: var(--color_main);
+}
+
+/* 投稿リストボックスのカテゴリーのアイコンの非表示 */
+.icon-folder:before {
+    display: none!important;
+}
+
+/* 画像のズームのOFF */
+.-type-card .p-postList__link:hover .c-postThumb__img {
+    transform: unset;
+}
+
+/* 投稿リストの特別調整 */
+.-type-card .p-postList__link {
+    display: block;
+    height: 100%;
+    height: auto;
+}
+
+/* 投稿リストボックスの標準動作の無効化 */
+.-type-card .p-postList__thumb::before {
+    background: unset; /* フィルター */
+}
+
+/* 投稿リストの全体のホバー時に動く */
+.-type-card .p-postList__item:hover {
+    text-decoration: inherit;
+    color: inherit;
+    opacity: inherit;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+/* 投稿リストの最下部のボタンの位置 */
+div.is-style-more_btn {
+    margin-top: 20px;
+}
+
+/* 
+ * ==============================
+ * 投稿リストボックスのカスタマイズ（リスト型）
+ * ==============================
+ */
+
+/* 投稿リストのカテゴリー（リスト型） */
+.-type-list .p-postList__item.c-postThumb__cat {
+    position: absolute;
+    right: 0px;
+    top: 8px;
+    left: auto;
+}
+
+/* 投稿リストボックスの枠 */
+.-type-list .p-postList__item {
+    background: #fff;
+    padding: 3px;
+    margin: 1px;
+    width: auto !important;
+    transition: all ease 0.3s;
+}
+
+/* 投稿リストボックスのサムネイルのスペース */
+.-type-list .p-postList__thumb.c-postThumb {
+    padding: 5px 5px;
+    border: none;
+}
+
+/* 投稿リストのタイトル部分のスペース調整 */
+.-type-list.p-postList > .p-postList__item .p-postList__body {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* 投稿リストのH2の装飾 */
+.-type-list.p-postList > .p-postList__item .p-postList__body > h2.p-postList__title {
+    font-size: 1.2rem;
+}
+
+/* 画像のズームのOFF */
+.-type-list .p-postList__item > .p-postList__link:hover .c-postThumb__img {
+    transform: unset;
+}
+
+/* 投稿リストの全体のホバースタイル */
+.-type-list.p-postList > .p-postList__item:hover {
+    text-decoration: inherit !important;
+    color: inherit !important;
+    opacity: inherit !important;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+/* 
+ * ==============================
+ * 投稿リストボックスのカスタマイズ（テキスト型）
+ * ==============================
+ */
+
+/* 投稿日のアイコンの非表示 */
+time.c-postTimes__posted.icon-posted::before {
+    display: none;
+}
+
+/* カテゴリーアイコンの非表示 */
+span.p-postList__cat.u-thin.icon-folder::before {
+    display: none;
+}
+
+/* シンプルな投稿リストのボーダー非表示 */
+.-type-simple.p-postList {
+    border: none;
+}
+
+/* シンプルな投稿リストの本文のスタイル */
+.-type-simple.p-postList .p-postList__body {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+
+/* シンプルな投稿リストのメタデータのスタイル */
+.-type-simple.p-postList .p-postList__meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* シンプルな投稿リストの投稿日とカテゴリーのマージン調整 */
+.p-postList.-type-simple .c-postTimes__posted, .p-postList.-type-simple .p-postList__cat {
+    margin: 0;
+}
+
+/* シンプルな投稿リストのタイトルのスタイル */
+.-type-simple.p-postList .p-postList__title {
+    font-size: 0.9em !important;
+    margin-bottom: 3px !important;
+}
+
+/* シンプルな投稿リストのリンクのスタイル */
+.-type-simple.p-postList__link {
+    display: block;
+    border-bottom: none;
+    padding: 0.75em 0.5em;
+    transition: none !important;
+}
+
+/* シンプルな投稿リストアイテムのホバースタイル */
+.-type-simple > .p-postList__item {
+    text-decoration: none !important;
+    color: inherit !important;
+    opacity: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    border: none;
+}
+
+/* シンプルな投稿リストアイテムの背景色 */
+.-type-simple > a.p-postList__item {
+    background: #fff !important;
+}
+
+/* シンプルな投稿リストのカテゴリーのスタイル */
+.-type-simple .p-postList__cat {
+    color: #333;
+    border: solid 1px #333;
+    border-radius: 0px;
+    padding: 4px;
+}
+
+/* シンプルな投稿リストのリンクのボーダー非表示 */
+.-type-simple .p-postList__link {
+    border: none;
+}
+
+/* 
+ * ==============================
+ * 投稿リストのタグ
+ * ==============================
+ */
+
+/* 投稿リストのタグ */
+.p-articleMetas__termList.c-tagList > .c-tagList__link {
+    font-size: 10px;
+    line-height: 1.2em;
+    display: inline-block;
+    word-break: break-word;
+    margin-top: 5px;
+    border-radius: 15px;
+    text-decoration: none;
+    padding: 5px 8px;
+    margin-left: 3px;
+    color: #fff;
+    border: 1px solid var(--color_main);
+    background-color: var(--color_main);
+}
+
+/* 投稿リストのタグ（ホバー時） */
+.p-articleMetas__termList.c-tagList > .c-tagList__link:hover {
+    color: var(--color_main);
+    background-color: #fff;
+    border: 1px solid var(--color_main);
+}
+
+/* 
+ * ==============================
+ * 投稿ページのアーカイブの装飾
+ * ==============================
+ */
+
+/* カテゴリー一覧のサブタイトルを見せない */
+.c-pageTitle__subTitle {
+    display: none;
+}
+
+/* 投稿アーカイブのページのH1タイトル */
+.c-pageTitle > .c-pageTitle__inner {
+    color: var(--color_main);
+    text-align: center;
+    font-size: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+    .c-pageTitle > .c-pageTitle__inner {
+        margin-top: -10px;
+        font-size: 1.3em !important;
+    }
+
+    .c-pageTitle__inner > span.c-pageTitle {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* カテゴリーのアーカイブのページ */
+.p-termNavigation.c-categoryList > .c-categoryList__link.-current {
+    font-size: 20px;
+    line-height: 1.5em;
+    display: inline-block;
+    word-break: break-word;
+    margin-top: 5px;
+    padding: 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    padding: 5px 8px;
+    margin-left: 3px;
+}
+
+/* アーカイブの第一カテゴリー */
+.p-termNavigation.c-categoryList > .c-categoryList__link.hov-flash-up {
+    font-size: 15px;
+    line-height: 1.5em;
+    display: inline-block;
+    word-break: break-word;
+    padding: 6px 8px;
+    margin-top: 5px;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid var(--color_main);
+    color: var(--color_main);
+    background: #fff;
+}
+
+/* アーカイブの第二カテゴリー */
+.p-termNavigation.c-categoryList > .c-categoryList__link.-current {
+    font-size: 15px;
+    line-height: 1em;
+    display: inline-block;
+    word-break: break-word;
+    padding: 6px 8px;
+    margin-top: 5px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--color_main);
+    background: #fff;
+}
+
+/* 
+ * ==============================
+ * 関連記事のカスタマイズ
+ * ==============================
+ */
+
+/* 関連記事の４列から３列 */
+.p-relatedPosts .p-postList__item {
+    margin: 5px;
+    float: left;
+    width: calc(33% - 10px)!important;
+}
+
+@media screen and (max-width: 600px) {
+    .p-relatedPosts .p-postList__item {
+        width: calc(50% - 10px)!important;
+        margin: 5px;
+    }
+}
+
+/* 関連記事のテキスト */
+ul.p-postList.p-relatedPosts.-type-card > li.p-postList__item > .p-postList__link > .p-postList__body > .p-postList__title {
+    font-size: 12px!important;
+}
+
+/* ==============================
+ * プロフィールボックス（記事下の著者欄）
+ * ==============================
+ */
+
+/* プロフィールボックス */
+.p-profileBox {
+    background-color: #fff;
+    border: none;
+    color: #333;
+}
+
+.p-profileBox__bg + .p-profileBox__icon {
+    margin-top: -42.5px;
+}
+
+.p-profileBox__icon img {
+    width: 85px;
+    height: 85px;
+}
+
+.p-profileBox__bgImg {
+    object-position: 100% 90%;
+}
+
+/* 著者の紹介文 */
+.p-authorBox__desc.u-thin {
+    font-size: 0.9em;
+}
+
+/* ==============================
+ * ゴリウェブプラグインのタグのカスタマイズ
+ * 7.タグ[post_tag_lead]のショートコード追加
+ * ==============================
+ */
+
+/* アーカイブにタグを表示 */
+.post-tags {
+    margin-bottom: 20px;
+}
+
+.post-tags a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 6px 12px;
+    background-color: var(--color_main);
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.post-tags a:hover {
+    background-color: #ddd;
+}
